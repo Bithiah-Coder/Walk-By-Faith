@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Walk By Faith Church website honoring Jesus Christ while providing respectful summaries of world religions." />
   <title>Walk By Faith Church</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom right, #f4f4f9, #e6f0ea);
       color: #333;
       line-height: 1.6;
     }
@@ -22,6 +23,7 @@
     }
 
     header h1 {
+      font-family: 'Playfair Display', serif;
       font-size: 48px;
       margin-bottom: 10px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
@@ -32,6 +34,22 @@
       text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
 
+    .cta-button {
+      background-color: #4b0082;
+      color: white;
+      padding: 12px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 20px;
+      cursor: pointer;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .cta-button:hover {
+      background-color: #5f0fff;
+    }
+
     section {
       padding: 50px 20px;
       max-width: 1000px;
@@ -39,7 +57,8 @@
     }
 
     section h2 {
-      color: #004080;
+      font-family: 'Playfair Display', serif;
+      color: #003366;
     }
 
     .religion {
@@ -63,7 +82,7 @@
     .religion button {
       margin-top: 10px;
       padding: 10px 15px;
-      background-color: #004080;
+      background-color: #007a5e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -71,11 +90,31 @@
     }
 
     .religion button:hover {
-      background-color: #0055aa;
+      background-color: #009d73;
+    }
+
+    .game-section {
+      background-color: #f0e6ff;
+      padding: 40px 20px;
+      border-radius: 12px;
+      margin-top: 50px;
+    }
+
+    .game-section h2 {
+      font-family: 'Playfair Display', serif;
+      color: #4b0082;
+      text-align: center;
+    }
+
+    .game-section p {
+      text-align: center;
+      font-size: 18px;
+      max-width: 800px;
+      margin: auto;
     }
 
     footer {
-      background: #004080;
+      background: #222;
       color: white;
       text-align: center;
       padding: 20px;
@@ -87,9 +126,10 @@
   <header>
     <h1>Walk By Faith</h1>
     <p>Founded on the truth of Yahweh, centered in Yeshua (Jesus), and committed to love, growth, and truth.</p>
+    <button class="cta-button" onclick="document.getElementById('church').scrollIntoView({ behavior: 'smooth' });">Start Your Faith Journey</button>
   </header>
 
-  <section>
+  <section id="church">
     <h2>Our Church Story</h2>
     <p>
       Walk By Faith is a church built on the foundation of Jesus Christ — the way, the truth, and the life (John 14:6, KJV). Our mission is to serve with humility, teach with boldness, and walk with love. We exist to share the Good News while guiding others through clarity and truth. We believe that when you truly know Jesus, everything changes.
@@ -103,7 +143,7 @@
     </p>
 
     <div class="religion">
-      <img src="images/christianity.jpg" alt="Christianity image">
+      <img src="images/christianity.jpg" alt="Cross drawn in sand representing Christianity">
       <div>
         <h3>Christianity</h3>
         <p>Christianity is centered on the life, death, and resurrection of Jesus Christ. Believers follow His teachings through the Bible and live in grace by faith.</p>
@@ -112,7 +152,7 @@
     </div>
 
     <div class="religion">
-      <img src="images/islam.jpg" alt="Islam image">
+      <img src="images/islam.jpg" alt="Open Quran on a wooden table symbolizing Islamic scripture">
       <div>
         <h3>Islam</h3>
         <p>Islam is based on the teachings of the Prophet Muhammad and submission to Allah. The Quran is the central scripture. It emphasizes discipline, prayer, and charity.</p>
@@ -121,7 +161,7 @@
     </div>
 
     <div class="religion">
-      <img src="images/hindu.jpg" alt="Hinduism image">
+      <img src="images/hindu.jpg" alt="Woman in nature symbolizing spiritual devotion in Hinduism">
       <div>
         <h3>Hinduism</h3>
         <p>Hinduism encompasses various beliefs including karma, reincarnation, and devotion to many gods. It's known for its ancient texts and philosophical depth.</p>
@@ -130,13 +170,20 @@
     </div>
 
     <div class="religion">
-      <img src="images/buddhism.jpg" alt="Buddhism image">
+      <img src="images/buddhism.jpg" alt="Monk walking through a corridor, representing Buddhism">
       <div>
         <h3>Buddhism</h3>
         <p>Buddhism teaches mindfulness, detachment, and the path to end suffering through the Eightfold Path. Its followers seek inner peace and enlightenment.</p>
         <button disabled>See more (coming soon)</button>
       </div>
     </div>
+  </section>
+
+  <section class="game-section">
+    <h2>Coming Soon: Walk in Their Shoes</h2>
+    <p>
+      Soon, you will be able to play through interactive stories inspired by the Bible — experiencing life through the eyes of Jesus, His disciples, and those who encountered Him. These stories are designed to help you reflect on faith, purpose, and the personal journey of following Christ.
+    </p>
   </section>
 
   <footer>
