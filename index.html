@@ -3,199 +3,185 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Walk By Faith Church website honoring Jesus Christ while providing respectful summaries of world religions." />
   <title>Walk By Faith Church</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: 'Playfair Display', serif;
-      background: linear-gradient(to bottom right, #f4f4f9, #e6f0ea);
-      color: #333;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f8f5f1; /* creamy tone */
+      color: #1a1a1a;
       line-height: 1.6;
     }
-
     header {
-      background: url('images/church-intro.jpg') center/cover no-repeat;
-      color: white;
+      background-color: #fff;
+      padding: 20px;
       text-align: center;
-      padding: 180px 20px;
+      border-bottom: 1px solid #ccc;
     }
-
-    header h1 {
-      font-size: 52px;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    nav {
+      background-color: #e8e3da;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
     }
-
-    header p {
-      font-size: 24px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    }
-
-    .cta-button {
-      background-color: #4b0082;
-      color: white;
-      padding: 14px 24px;
-      font-size: 20px;
-      border: none;
-      border-radius: 6px;
-      margin-top: 24px;
-      cursor: pointer;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-    }
-
-    .cta-button:hover {
-      background-color: #5f0fff;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section h2 {
+    nav a {
+      text-decoration: none;
+      color: #4b0082;
       font-family: 'Playfair Display', serif;
-      color: black;
       font-weight: bold;
     }
-
-    .religion {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 20px;
-      margin-top: 40px;
+    .hero {
+      position: relative;
+      text-align: center;
+    }
+    .hero img {
+      width: 100%;
+      height: auto;
+    }
+    .cta {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #6a0dad;
+      color: white;
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      color: black;
+    }
+    button {
+      background-color: #6a0dad;
+      color: white;
+      padding: 10px 18px;
+      font-size: 16px;
+      font-family: 'Playfair Display', serif;
+      cursor: pointer;
+      border: none;
+      margin-top: 10px;
+    }
+    .story {
+      display: none;
       background: #fff;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-left: 5px solid #6a0dad;
+      margin-top: 20px;
     }
-
-    .religion img {
-      width: 100%;
-      border-radius: 8px;
-      max-height: 240px;
-      object-fit: cover;
+    .see-more-section {
+      margin-top: 20px;
     }
-
-    .religion h3 {
-      color: black;
-      font-weight: bold;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .religion button {
-      margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #007a5e;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .religion button:hover {
-      background-color: #009d73;
-    }
-
-    .game-section {
-      background-color: #f0e6ff;
-      padding: 50px 20px;
-      border-radius: 12px;
-      margin-top: 60px;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .game-section h2 {
-      color: #4b0082;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    .game-section p {
-      text-align: center;
-      font-size: 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
     footer {
-      background: #222;
-      color: white;
+      background-color: #333;
+      color: #fff;
       text-align: center;
-      padding: 20px;
-      margin-top: 60px;
-      font-family: 'Playfair Display', serif;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+    .image-credit {
+      font-size: 13px;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Walk By Faith</h1>
-    <p>Founded on the truth of Yahweh, centered in Yeshua (Jesus), and committed to love, growth, and truth.</p>
-    <button class="cta-button" onclick="document.getElementById('church').scrollIntoView({ behavior: 'smooth' });">Start Your Faith Journey</button>
-  </header>
 
-  <section id="church">
-    <h2>Our Church Story</h2>
-    <p>
-      Walk By Faith is a church built on the foundation of Jesus Christ — the way, the truth, and the life (John 14:6, KJV). Our mission is to serve with humility, teach with boldness, and walk with love. We exist to share the Good News while guiding others through clarity and truth. We believe that when you truly know Jesus, everything changes.
-    </p>
-  </section>
+<header>
+  <h1 style="font-family: 'Playfair Display', serif;">Walk By Faith Church</h1>
+</header>
 
-  <section>
-    <h2>Understanding the World Religions</h2>
-    <p>
-      Below are brief and respectful summaries of major world religions. We believe it's important to understand these differences so we can better see the light and love of Christ by comparison.
-    </p>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#support">Support</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+  <a href="#blog">Blog</a>
+</nav>
 
-    <div class="religion">
-      <img src="images/christianity.jpg" alt="Cross drawn in sand representing Christianity">
-      <div>
-        <h3>Christianity</h3>
-        <p>Christianity is centered on the life, death, and resurrection of Jesus Christ. Believers follow His teachings through the Bible and live in grace by faith.</p>
-        <button disabled>See more (coming soon)</button>
-      </div>
-    </div>
+<div class="hero" id="home">
+  <img src="images/church-intro.jpg" alt="Holy Bible on bench - Church Hero Image" />
+  <a href="#story"><button class="cta">Start Your Faith Journey</button></a>
+</div>
 
-    <div class="religion">
-      <img src="images/islam.jpg" alt="Open Quran on a wooden table symbolizing Islamic scripture">
-      <div>
-        <h3>Islam</h3>
-        <p>Islam is based on the teachings of the Prophet Muhammad and submission to Allah. The Quran is the central scripture. It emphasizes discipline, prayer, and charity.</p>
-        <button disabled>See more (coming soon)</button>
-      </div>
-    </div>
+<section id="story">
+  <h2>Our Church Story</h2>
+  <p>Founded on the living Word of God, Walk By Faith Church is a Christ-centered ministry dedicated to spreading the Gospel of Jesus Christ through love, growth, and truth. We believe in the power of Scripture, worship, and fellowship as tools to transform lives and bring people into a deeper relationship with the Savior.</p>
+</section>
 
-    <div class="religion">
-      <img src="images/hindu.jpg" alt="Woman in nature symbolizing spiritual devotion in Hinduism">
-      <div>
-        <h3>Hinduism</h3>
-        <p>Hinduism encompasses various beliefs including karma, reincarnation, and devotion to many gods. It's known for its ancient texts and philosophical depth.</p>
-        <button disabled>See more (coming soon)</button>
-      </div>
-    </div>
+<section>
+  <h2>Understanding World Religions</h2>
+  <p>This section shares brief, respectful overviews of world religions to help visitors understand the uniqueness of Jesus Christ through comparison.</p>
+</section>
 
-    <div class="religion">
-      <img src="images/buddhism.jpg" alt="Monk walking through a corridor, representing Buddhism">
-      <div>
-        <h3>Buddhism</h3>
-        <p>Buddhism teaches mindfulness, detachment, and the path to end suffering through the Eightfold Path. Its followers seek inner peace and enlightenment.</p>
-        <button disabled>See more (coming soon)</button>
-      </div>
-    </div>
-  </section>
+<section>
+  <h2>Christianity</h2>
+  <img src="images/christianity.jpg" alt="Desert and Cross - Christianity" width="100%" />
+  <p>Christianity is built on the life, death, and resurrection of Jesus Christ. Stories focus on God's love, His promises, and salvation through faith.</p>
+  <button onclick="toggleSection('christianity-more')">See More</button>
+  <div id="christianity-more" class="story see-more-section">
+    <h3 style="font-family: 'Playfair Display', serif;">The Life of Jesus (KJV)</h3>
+    <p><strong>Birth:</strong> "Behold, a virgin shall be with child..." – Matthew 1:23</p>
+    <p><strong>Baptism:</strong> "And Jesus, when he was baptized, went up straightway out of the water..." – Matthew 3:16</p>
+    <p><strong>Teachings:</strong> "Blessed are the meek: for they shall inherit the earth." – Matthew 5:5</p>
+    <p><strong>Miracles:</strong> "And Jesus went about all Galilee... healing all manner of sickness..." – Matthew 4:23</p>
+    <p><strong>Crucifixion:</strong> "And they crucified him..." – Matthew 27:35</p>
+    <p><strong>Resurrection:</strong> "He is not here: for he is risen..." – Matthew 28:6</p>
+  </div>
+</section>
 
-  <section class="game-section">
-    <h2>Coming Soon: Walk in Their Shoes</h2>
-    <p>
-      A fully interactive storytelling game is coming! Step into the sandals of Jesus, His disciples, and those who encountered Him and experienced His healing and miracles. You'll walk through biblical moments, make meaningful choices, and see how one encounter with Christ can transform a life.
-    </p>
-  </section>
+<section>
+  <h2>Islam</h2>
+  <img src="images/islam.jpg" alt="Open Quran book - Islam" width="100%" />
+  <p>Islam centers on the teachings of the Prophet Muhammad, emphasizing submission to Allah and acts of kindness and prayer.</p>
+</section>
 
-  <footer>
-    <p>Site created with love by <strong>Bithiah Lloyd</strong> | &copy; 2025 Walk By Faith Church</p>
-  </footer>
+<section>
+  <h2>Hinduism</h2>
+  <img src="images/hindu.jpg" alt="Woman meditating in forest - Hinduism" width="100%" />
+  <p>Hinduism includes stories of deities and spiritual philosophies centered around karma, devotion, and the cycles of rebirth.</p>
+</section>
+
+<section>
+  <h2>Buddhism</h2>
+  <img src="images/buddhism.jpg" alt="Monk in corridor - Buddhism" width="100%" />
+  <p>Buddhism follows the teachings of the Buddha, focusing on overcoming suffering, practicing mindfulness, and achieving enlightenment.</p>
+</section>
+
+<section>
+  <h2>Walk In Their Shoes (Coming Soon)</h2>
+  <p>You’ll soon be able to experience an interactive journey where you play as Jesus, His disciples, and those transformed by His miracles. Stay tuned for this immersive way to explore the Gospels.</p>
+</section>
+
+<footer>
+  <p>© 2025 Walk By Faith Church. Built with love by Bithiah Lloyd.</p>
+  <div class="image-credit">
+    <p><strong>Image Credits (Unsplash):</strong></p>
+    <ul style="list-style-type: none; padding: 0;">
+      <li>Intro: Aaron Burden – <a href="https://unsplash.com/photos/MYu49bghVAM" style="color: #ccc;">View</a></li>
+      <li>Christianity: Grant Whitty – <a href="https://unsplash.com/photos/0kVQh23Jspo" style="color: #ccc;">View</a></li>
+      <li>Islam: Shams Alam Ansari – <a href="https://unsplash.com/photos/cg2LLJuS_wo" style="color: #ccc;">View</a></li>
+      <li>Hinduism: Prasanth Dasari – <a href="https://unsplash.com/photos/Dqx4XWuXu7w" style="color: #ccc;">View</a></li>
+      <li>Buddhism: Alejandro Luengo – <a href="https://unsplash.com/photos/DDsD431IFX4" style="color: #ccc;">View</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  function toggleSection(id) {
+    const section = document.getElementById(id);
+    section.style.display = section.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
+
 </body>
 </html>
