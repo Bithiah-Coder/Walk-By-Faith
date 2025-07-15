@@ -10,44 +10,50 @@
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #fdf8f2;
-      color: #333;
+      background-color: #ffffff;
+      color: #000000;
     }
+
     header {
-      background-color: #311b92;
+      background-color: #000000;
       color: white;
-      padding: 20px;
+      padding: 10px 20px;
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
+
     nav {
       display: flex;
       justify-content: center;
-      gap: 25px;
-      margin-top: 10px;
+      gap: 20px;
+      margin-top: 5px;
       flex-wrap: wrap;
     }
+
     nav a {
       color: white;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 17px;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     .hero {
       position: relative;
       text-align: center;
       color: white;
     }
+
     .hero img {
       width: 100%;
-      height: 75vh;
+      height: 70vh;
       object-fit: cover;
-      opacity: 0.9;
     }
+
     .hero-text {
       position: absolute;
       top: 50%;
@@ -57,57 +63,72 @@
       padding: 30px;
       border-radius: 10px;
     }
+
     .hero-text h1 {
       font-size: 40px;
       margin-bottom: 20px;
     }
+
     .hero-text a {
-      background-color: #6a1b9a;
+      background-color: #c5aee0;
       padding: 10px 20px;
       color: white;
       text-decoration: none;
       font-size: 18px;
       border-radius: 5px;
     }
+
     section {
       padding: 50px 20px;
       max-width: 900px;
       margin: auto;
     }
+
     section h2 {
       font-size: 30px;
       margin-bottom: 15px;
     }
+
     .religion-img {
       width: 100%;
       height: auto;
       border-radius: 8px;
+      margin-bottom: 10px;
     }
+
     h3 {
       font-weight: bold;
       color: black;
       font-size: 24px;
       margin-top: 20px;
     }
+
     p {
       font-size: 18px;
       line-height: 1.6;
     }
+
     .see-more-btn {
       display: inline-block;
       margin-top: 10px;
       padding: 10px 20px;
-      background-color: #6a1b9a;
+      background-color: #c5aee0;
       color: white;
       text-decoration: none;
       border-radius: 5px;
     }
+
     footer {
-      background-color: #1a237e;
+      background-color: #000000;
       color: white;
       padding: 20px;
       text-align: center;
       font-size: 14px;
+    }
+
+    footer a {
+      color: #b39ddb;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -137,7 +158,7 @@
     <p>Founded on the truth of Yahweh, centered in Yeshua (Jesus), and committed to love, growth, and truth. Walk By Faith began as a calling to teach the Gospel in spirit and in truth, following the King James Version of the Bible and the love of Christ for all people.</p>
   </section>
 
-  <section style="background-color: #e6f0ff;">
+  <section>
     <h2>Understanding World Religions</h2>
 
     <img class="religion-img" src="images/christianity.jpg" alt="Christianity Image">
@@ -161,14 +182,14 @@
     <p>Buddhism follows the teachings of the Buddha and focuses on mindfulness, compassion, and peace.</p>
   </section>
 
-  <section style="background-color: #ede7f6;">
+  <section style="background-color: #fdf8f2;">
     <h2>Walk in Their Shoes – Interactive Game (Coming Soon)</h2>
     <p>Experience the stories of Jesus, His disciples, and those He healed. This upcoming interactive journey lets you step into the lives of Biblical figures and walk through the Gospel in a new and powerful way.</p>
     <a class="see-more-btn" href="#">Preview Game</a>
   </section>
 
   <footer>
-    <p>All images sourced via <a href="https://unsplash.com" style="color: #bbdefb;">Unsplash</a> | Site by Bithiah Lloyd | &copy; 2025 Walk By Faith Church</p>
+    <p>All images sourced via <a href="https://unsplash.com" target="_blank">Unsplash</a> | Site by <strong>Bithiah Lloyd</strong> | &copy; 2025 Walk By Faith Church</p>
   </footer>
 
 </body>
