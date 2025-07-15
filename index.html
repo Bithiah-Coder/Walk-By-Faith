@@ -2,184 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Walk By Faith Church website honoring Jesus Christ while providing respectful summaries of world religions." />
   <title>Walk By Faith Church</title>
-  <meta name="author" content="Bithiah Lloyd">
-  <meta name="description" content="Walk By Faith Church – A Jesus-centered space to grow in faith, learn truth, and experience grace." />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
     body {
-      font-family: 'Quicksand', sans-serif;
       margin: 0;
-      background: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
       color: #333;
       line-height: 1.6;
     }
+
     header {
       background: url('images/church-intro.jpg') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 80px 20px;
-      position: relative;
+      padding: 100px 20px;
     }
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      z-index: 1;
-    }
-    header h1, header p {
-      position: relative;
-      z-index: 2;
-    }
-    h1 {
-      font-size: 3rem;
+
+    header h1 {
+      font-size: 48px;
       margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     }
+
     header p {
-      font-size: 1.2rem;
-      font-style: italic;
+      font-size: 22px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+
     section {
-      margin-bottom: 50px;
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
-    h2 {
+
+    section h2 {
       color: #004080;
-      margin-bottom: 10px;
     }
-    .quote {
-      font-style: italic;
-      color: #666;
-      margin: 10px 0;
-    }
-    .card-grid {
+
+    .religion {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 1fr 2fr;
       gap: 20px;
-    }
-    .card {
-      background: white;
+      margin-top: 40px;
+      background: #fff;
       padding: 20px;
-      border-left: 5px solid #004080;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .card img {
+
+    .religion img {
       width: 100%;
-      max-height: 180px;
+      border-radius: 8px;
+      max-height: 220px;
       object-fit: cover;
-      border-radius: 5px;
     }
-    .btn {
-      display: inline-block;
+
+    .religion button {
       margin-top: 10px;
       padding: 10px 15px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .religion button:hover {
+      background-color: #0055aa;
+    }
+
+    footer {
       background: #004080;
       color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-    .interactive {
-      background: #fffbe7;
-      border-left: 5px solid gold;
-      padding: 20px;
-      border-radius: 10px;
-    }
-    footer {
-      background: #eee;
-      padding: 20px;
       text-align: center;
-      font-size: 14px;
-    }
-    footer a {
-      color: #004080;
-      margin: 0 8px;
-      text-decoration: none;
+      padding: 20px;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Walk By Faith Church</h1>
-    <p>“For we walk by faith, not by sight.” – 2 Corinthians 5:7 (KJV)</p>
+    <h1>Walk By Faith</h1>
+    <p>Founded on the truth of Yahweh, centered in Yeshua (Jesus), and committed to love, growth, and truth.</p>
   </header>
 
-  <div class="container">
+  <section>
+    <h2>Our Church Story</h2>
+    <p>
+      Walk By Faith is a church built on the foundation of Jesus Christ — the way, the truth, and the life (John 14:6, KJV). Our mission is to serve with humility, teach with boldness, and walk with love. We exist to share the Good News while guiding others through clarity and truth. We believe that when you truly know Jesus, everything changes.
+    </p>
+  </section>
 
-    <!-- Welcome/Essay Section -->
-    <section>
-      <h2>Welcome to Walk By Faith</h2>
-      <p>This space is dedicated to Jesus — the author and finisher of our faith. Walk By Faith Church began with a vision to love without condition, live in truth, and glorify Christ in every step.</p>
-      <p>Here, we gather as disciples, seekers, and believers — united not by perfection, but by grace. Our church walks in the footsteps of Christ, guided by the Word of God, prayer, and service to others.</p>
-    </section>
+  <section>
+    <h2>Understanding the World Religions</h2>
+    <p>
+      Below are brief and respectful summaries of major world religions. We believe it's important to understand these differences so we can better see the light and love of Christ by comparison.
+    </p>
 
-    <!-- Why Jesus Is Different -->
-    <section>
-      <h2>Why Jesus Is Different</h2>
-      <p>Jesus is not just a teacher or prophet — He is the Son of God, the Savior, and the living Word made flesh. He didn’t come to build religion; He came to reconcile us to the Father.</p>
-      <p class="quote">“Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.” – John 14:6 (KJV)</p>
-      <p class="quote">“Come unto me, all ye that labour and are heavy laden, and I will give you rest.” – Matthew 11:28 (KJV)</p>
-    </section>
-
-    <!-- Interactive Game Placeholder -->
-    <section class="interactive">
-      <h2>Walk In Their Shoes</h2>
-      <p>Coming Soon: Choose to walk as Jesus, a disciple, or someone transformed by His love. Experience their journey, the miracles, and the moments of faith that changed history.</p>
-      <p><em>This interactive experience will let you choose different paths — from Peter on the water to Paul on the road to Damascus. All through scripture-based storytelling.</em></p>
-    </section>
-
-    <!-- World Religion Info -->
-    <section>
-      <h2>Understanding Other Faiths</h2>
-      <p>We believe in learning with respect and grace. Below are summaries of major world religions — not to compare, but to understand. Truth stands tall on its own.</p>
-      <div class="card-grid">
-        <div class="card">
-          <img src="images/christianity.jpg" alt="Symbolic image for Christianity" />
-          <h3>Christianity</h3>
-          <p>A faith based on Jesus Christ, the cross, and resurrection.</p>
-          <a href="#" class="btn">See more...</a>
-        </div>
-        <div class="card">
-          <img src="images/islam.jpg" alt="Symbolic image for Islam" />
-          <h3>Islam</h3>
-          <p>A monotheistic religion centered on submission to Allah.</p>
-          <a href="#" class="btn">See more...</a>
-        </div>
-        <div class="card">
-          <img src="images/hindu.jpg" alt="Symbolic image for Hinduism" />
-          <h3>Hinduism</h3>
-          <p>A diverse tradition with gods, karma, and spiritual paths.</p>
-          <a href="#" class="btn">See more...</a>
-        </div>
-        <div class="card">
-          <img src="images/buddhism.jpg" alt="Symbolic image for Buddhism" />
-          <h3>Buddhism</h3>
-          <p>Focused on mindfulness, inner peace, and ending suffering.</p>
-          <a href="#" class="btn">See more...</a>
-        </div>
+    <div class="religion">
+      <img src="images/christianity.jpg" alt="Christianity image">
+      <div>
+        <h3>Christianity</h3>
+        <p>Christianity is centered on the life, death, and resurrection of Jesus Christ. Believers follow His teachings through the Bible and live in grace by faith.</p>
+        <button disabled>See more (coming soon)</button>
       </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-      <p>
-        <a href="#">Home</a> |
-        <a href="#">About</a> |
-        <a href="#">Contact</a>
-      </p>
-      <p><strong>Created by Bithiah Lloyd</strong> | Images from <a href="https://unsplash.com" target="_blank">Unsplash</a></p>
-    </footer>
+    <div class="religion">
+      <img src="images/islam.jpg" alt="Islam image">
+      <div>
+        <h3>Islam</h3>
+        <p>Islam is based on the teachings of the Prophet Muhammad and submission to Allah. The Quran is the central scripture. It emphasizes discipline, prayer, and charity.</p>
+        <button disabled>See more (coming soon)</button>
+      </div>
+    </div>
 
-  </div>
+    <div class="religion">
+      <img src="images/hindu.jpg" alt="Hinduism image">
+      <div>
+        <h3>Hinduism</h3>
+        <p>Hinduism encompasses various beliefs including karma, reincarnation, and devotion to many gods. It's known for its ancient texts and philosophical depth.</p>
+        <button disabled>See more (coming soon)</button>
+      </div>
+    </div>
+
+    <div class="religion">
+      <img src="images/buddhism.jpg" alt="Buddhism image">
+      <div>
+        <h3>Buddhism</h3>
+        <p>Buddhism teaches mindfulness, detachment, and the path to end suffering through the Eightfold Path. Its followers seek inner peace and enlightenment.</p>
+        <button disabled>See more (coming soon)</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Site created with love by <strong>Bithiah Lloyd</strong> | &copy; 2025 Walk By Faith Church</p>
+  </footer>
 </body>
 </html>
