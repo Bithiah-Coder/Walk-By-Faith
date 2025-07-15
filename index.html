@@ -4,184 +4,172 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Walk By Faith Church</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="A KJV-based church committed to walking in truth, love, and faith. Learn about Jesus and discover how He transforms lives." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #f8f5f1; /* creamy tone */
-      color: #1a1a1a;
-      line-height: 1.6;
+      font-family: 'Playfair Display', serif;
+      background-color: #fdf8f2;
+      color: #333;
     }
     header {
-      background-color: #fff;
+      background-color: #311b92;
+      color: white;
       padding: 20px;
       text-align: center;
-      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav {
-      background-color: #e8e3da;
       display: flex;
       justify-content: center;
-      gap: 20px;
-      padding: 10px;
+      gap: 25px;
+      margin-top: 10px;
+      flex-wrap: wrap;
     }
     nav a {
+      color: white;
       text-decoration: none;
-      color: #4b0082;
-      font-family: 'Playfair Display', serif;
-      font-weight: bold;
+      font-size: 18px;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     .hero {
       position: relative;
       text-align: center;
+      color: white;
     }
     .hero img {
       width: 100%;
-      height: auto;
+      height: 75vh;
+      object-fit: cover;
+      opacity: 0.9;
     }
-    .cta {
+    .hero-text {
       position: absolute;
-      top: 60%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: #6a0dad;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 10px;
+    }
+    .hero-text h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    .hero-text a {
+      background-color: #6a1b9a;
+      padding: 10px 20px;
       color: white;
-      padding: 15px 25px;
+      text-decoration: none;
       font-size: 18px;
-      border: none;
-      cursor: pointer;
-      font-family: 'Playfair Display', serif;
+      border-radius: 5px;
     }
     section {
-      padding: 40px 20px;
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
     }
-    h2 {
-      font-family: 'Playfair Display', serif;
+    section h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    .religion-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    h3 {
       font-weight: bold;
       color: black;
+      font-size: 24px;
+      margin-top: 20px;
     }
-    button {
-      background-color: #6a0dad;
-      color: white;
-      padding: 10px 18px;
-      font-size: 16px;
-      font-family: 'Playfair Display', serif;
-      cursor: pointer;
-      border: none;
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .see-more-btn {
+      display: inline-block;
       margin-top: 10px;
-    }
-    .story {
-      display: none;
-      background: #fff;
-      padding: 20px;
-      border-left: 5px solid #6a0dad;
-      margin-top: 20px;
-    }
-    .see-more-section {
-      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #6a1b9a;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
     }
     footer {
-      background-color: #333;
-      color: #fff;
+      background-color: #1a237e;
+      color: white;
+      padding: 20px;
       text-align: center;
-      padding: 30px 20px;
       font-size: 14px;
-    }
-    .image-credit {
-      font-size: 13px;
-      color: #ccc;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1 style="font-family: 'Playfair Display', serif;">Walk By Faith Church</h1>
-</header>
+  <header>
+    <h1>Walk By Faith</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Support</a>
+      <a href="#">Gallery</a>
+      <a href="#">Contact</a>
+      <a href="#">Blog</a>
+    </nav>
+  </header>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#support">Support</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#contact">Contact</a>
-  <a href="#blog">Blog</a>
-</nav>
-
-<div class="hero" id="home">
-  <img src="images/church-intro.jpg" alt="Holy Bible on bench - Church Hero Image" />
-  <a href="#story"><button class="cta">Start Your Faith Journey</button></a>
-</div>
-
-<section id="story">
-  <h2>Our Church Story</h2>
-  <p>Founded on the living Word of God, Walk By Faith Church is a Christ-centered ministry dedicated to spreading the Gospel of Jesus Christ through love, growth, and truth. We believe in the power of Scripture, worship, and fellowship as tools to transform lives and bring people into a deeper relationship with the Savior.</p>
-</section>
-
-<section>
-  <h2>Understanding World Religions</h2>
-  <p>This section shares brief, respectful overviews of world religions to help visitors understand the uniqueness of Jesus Christ through comparison.</p>
-</section>
-
-<section>
-  <h2>Christianity</h2>
-  <img src="images/christianity.jpg" alt="Desert and Cross - Christianity" width="100%" />
-  <p>Christianity is built on the life, death, and resurrection of Jesus Christ. Stories focus on God's love, His promises, and salvation through faith.</p>
-  <button onclick="toggleSection('christianity-more')">See More</button>
-  <div id="christianity-more" class="story see-more-section">
-    <h3 style="font-family: 'Playfair Display', serif;">The Life of Jesus (KJV)</h3>
-    <p><strong>Birth:</strong> "Behold, a virgin shall be with child..." – Matthew 1:23</p>
-    <p><strong>Baptism:</strong> "And Jesus, when he was baptized, went up straightway out of the water..." – Matthew 3:16</p>
-    <p><strong>Teachings:</strong> "Blessed are the meek: for they shall inherit the earth." – Matthew 5:5</p>
-    <p><strong>Miracles:</strong> "And Jesus went about all Galilee... healing all manner of sickness..." – Matthew 4:23</p>
-    <p><strong>Crucifixion:</strong> "And they crucified him..." – Matthew 27:35</p>
-    <p><strong>Resurrection:</strong> "He is not here: for he is risen..." – Matthew 28:6</p>
+  <div class="hero">
+    <img src="images/church-intro.jpg" alt="Church Intro Image">
+    <div class="hero-text">
+      <h1>Start Your Faith Journey</h1>
+      <a href="#">Learn More</a>
+    </div>
   </div>
-</section>
 
-<section>
-  <h2>Islam</h2>
-  <img src="images/islam.jpg" alt="Open Quran book - Islam" width="100%" />
-  <p>Islam centers on the teachings of the Prophet Muhammad, emphasizing submission to Allah and acts of kindness and prayer.</p>
-</section>
+  <section>
+    <h2>Our Church Story</h2>
+    <p>Founded on the truth of Yahweh, centered in Yeshua (Jesus), and committed to love, growth, and truth. Walk By Faith began as a calling to teach the Gospel in spirit and in truth, following the King James Version of the Bible and the love of Christ for all people.</p>
+  </section>
 
-<section>
-  <h2>Hinduism</h2>
-  <img src="images/hindu.jpg" alt="Woman meditating in forest - Hinduism" width="100%" />
-  <p>Hinduism includes stories of deities and spiritual philosophies centered around karma, devotion, and the cycles of rebirth.</p>
-</section>
+  <section style="background-color: #e6f0ff;">
+    <h2>Understanding World Religions</h2>
 
-<section>
-  <h2>Buddhism</h2>
-  <img src="images/buddhism.jpg" alt="Monk in corridor - Buddhism" width="100%" />
-  <p>Buddhism follows the teachings of the Buddha, focusing on overcoming suffering, practicing mindfulness, and achieving enlightenment.</p>
-</section>
+    <img class="religion-img" src="images/christianity.jpg" alt="Christianity Image">
+    <h3>Christianity</h3>
+    <p>Christianity is centered on Jesus Christ, the Son of God, who came to save the world through love, sacrifice, and truth.</p>
+    <a class="see-more-btn" href="#">See More</a>
+    <hr>
 
-<section>
-  <h2>Walk In Their Shoes (Coming Soon)</h2>
-  <p>You’ll soon be able to experience an interactive journey where you play as Jesus, His disciples, and those transformed by His miracles. Stay tuned for this immersive way to explore the Gospels.</p>
-</section>
+    <img class="religion-img" src="images/islam.jpg" alt="Islam Image">
+    <h3>Islam</h3>
+    <p>Islam is based on submission to God (Allah) and the teachings of Prophet Muhammad.</p>
+    <hr>
 
-<footer>
-  <p>© 2025 Walk By Faith Church. Built with love by Bithiah Lloyd.</p>
-  <div class="image-credit">
-    <p><strong>Image Credits (Unsplash):</strong></p>
-    <ul style="list-style-type: none; padding: 0;">
-      <li>Intro: Aaron Burden – <a href="https://unsplash.com/photos/MYu49bghVAM" style="color: #ccc;">View</a></li>
-      <li>Christianity: Grant Whitty – <a href="https://unsplash.com/photos/0kVQh23Jspo" style="color: #ccc;">View</a></li>
-      <li>Islam: Shams Alam Ansari – <a href="https://unsplash.com/photos/cg2LLJuS_wo" style="color: #ccc;">View</a></li>
-      <li>Hinduism: Prasanth Dasari – <a href="https://unsplash.com/photos/Dqx4XWuXu7w" style="color: #ccc;">View</a></li>
-      <li>Buddhism: Alejandro Luengo – <a href="https://unsplash.com/photos/DDsD431IFX4" style="color: #ccc;">View</a></li>
-    </ul>
-  </div>
-</footer>
+    <img class="religion-img" src="images/hindu.jpg" alt="Hinduism Image">
+    <h3>Hinduism</h3>
+    <p>Hinduism embraces reincarnation, karma, and a deep sense of devotion and spiritual duty.</p>
+    <hr>
 
-<script>
-  function toggleSection(id) {
-    const section = document.getElementById(id);
-    section.style.display = section.style.display === 'block' ? 'none' : 'block';
-  }
-</script>
+    <img class="religion-img" src="images/buddhism.jpg" alt="Buddhism Image">
+    <h3>Buddhism</h3>
+    <p>Buddhism follows the teachings of the Buddha and focuses on mindfulness, compassion, and peace.</p>
+  </section>
+
+  <section style="background-color: #ede7f6;">
+    <h2>Walk in Their Shoes – Interactive Game (Coming Soon)</h2>
+    <p>Experience the stories of Jesus, His disciples, and those He healed. This upcoming interactive journey lets you step into the lives of Biblical figures and walk through the Gospel in a new and powerful way.</p>
+    <a class="see-more-btn" href="#">Preview Game</a>
+  </section>
+
+  <footer>
+    <p>All images sourced via <a href="https://unsplash.com" style="color: #bbdefb;">Unsplash</a> | Site by Bithiah Lloyd | &copy; 2025 Walk By Faith Church</p>
+  </footer>
 
 </body>
 </html>
