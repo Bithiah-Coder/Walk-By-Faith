@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Walk By Faith Church</title>
+  <meta name="author" content="Bithiah Lloyd">
+  <meta name="description" content="Walk By Faith Church – A Jesus-centered space to grow in faith, learn truth, and experience grace." />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: url('images/church-intro.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    h2 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+    .quote {
+      font-style: italic;
+      color: #666;
+      margin: 10px 0;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-left: 5px solid #004080;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .card img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #004080;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .interactive {
+      background: #fffbe7;
+      border-left: 5px solid gold;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    footer {
+      background: #eee;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+    footer a {
+      color: #004080;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Walk By Faith Church</h1>
+    <p>“For we walk by faith, not by sight.” – 2 Corinthians 5:7 (KJV)</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Welcome/Essay Section -->
+    <section>
+      <h2>Welcome to Walk By Faith</h2>
+      <p>This space is dedicated to Jesus — the author and finisher of our faith. Walk By Faith Church began with a vision to love without condition, live in truth, and glorify Christ in every step.</p>
+      <p>Here, we gather as disciples, seekers, and believers — united not by perfection, but by grace. Our church walks in the footsteps of Christ, guided by the Word of God, prayer, and service to others.</p>
+    </section>
+
+    <!-- Why Jesus Is Different -->
+    <section>
+      <h2>Why Jesus Is Different</h2>
+      <p>Jesus is not just a teacher or prophet — He is the Son of God, the Savior, and the living Word made flesh. He didn’t come to build religion; He came to reconcile us to the Father.</p>
+      <p class="quote">“Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.” – John 14:6 (KJV)</p>
+      <p class="quote">“Come unto me, all ye that labour and are heavy laden, and I will give you rest.” – Matthew 11:28 (KJV)</p>
+    </section>
+
+    <!-- Interactive Game Placeholder -->
+    <section class="interactive">
+      <h2>Walk In Their Shoes</h2>
+      <p>Coming Soon: Choose to walk as Jesus, a disciple, or someone transformed by His love. Experience their journey, the miracles, and the moments of faith that changed history.</p>
+      <p><em>This interactive experience will let you choose different paths — from Peter on the water to Paul on the road to Damascus. All through scripture-based storytelling.</em></p>
+    </section>
+
+    <!-- World Religion Info -->
+    <section>
+      <h2>Understanding Other Faiths</h2>
+      <p>We believe in learning with respect and grace. Below are summaries of major world religions — not to compare, but to understand. Truth stands tall on its own.</p>
+      <div class="card-grid">
+        <div class="card">
+          <img src="images/christianity.jpg" alt="Symbolic image for Christianity" />
+          <h3>Christianity</h3>
+          <p>A faith based on Jesus Christ, the cross, and resurrection.</p>
+          <a href="#" class="btn">See more...</a>
+        </div>
+        <div class="card">
+          <img src="images/islam.jpg" alt="Symbolic image for Islam" />
+          <h3>Islam</h3>
+          <p>A monotheistic religion centered on submission to Allah.</p>
+          <a href="#" class="btn">See more...</a>
+        </div>
+        <div class="card">
+          <img src="images/hindu.jpg" alt="Symbolic image for Hinduism" />
+          <h3>Hinduism</h3>
+          <p>A diverse tradition with gods, karma, and spiritual paths.</p>
+          <a href="#" class="btn">See more...</a>
+        </div>
+        <div class="card">
+          <img src="images/buddhism.jpg" alt="Symbolic image for Buddhism" />
+          <h3>Buddhism</h3>
+          <p>Focused on mindfulness, inner peace, and ending suffering.</p>
+          <a href="#" class="btn">See more...</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        <a href="#">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Contact</a>
+      </p>
+      <p><strong>Created by Bithiah Lloyd</strong> | Images from <a href="https://unsplash.com" target="_blank">Unsplash</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>
