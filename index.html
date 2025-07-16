@@ -13,7 +13,6 @@
       color: #333;
     }
 
-    /* NAVIGATION */
     header {
       background-color: #000;
       display: flex;
@@ -39,7 +38,6 @@
       color: #a485d8;
     }
 
-    /* HERO IMAGE */
     .hero {
       position: relative;
       background-image: url('images/church-intro.jpg');
@@ -65,60 +63,205 @@
       width: 100%;
     }
 
-    /* RELIGION SECTIONS */
-    .religion-section {
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #4c3173;
+    }
+
+    .emotion-buttons {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin: 40px auto;
-      gap: 30px;
-      max-width: 1200px;
-      padding: 0 20px;
+      gap: 15px;
+      margin-bottom: 30px;
     }
 
-    .religion {
-      flex: 1 1 250px;
-      max-width: 300px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 15px;
-      text-align: center;
-      transition: transform 0.5s ease;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .religion img {
-      width: 100%;
-      height: auto;
+    .emotion-buttons button {
+      background-color: #a485d8;
+      color: white;
+      border: none;
+      padding: 12px 20px;
       border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
     }
 
-    .religion h3 {
-      margin-top: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      color: black;
+    .emotion-buttons button:hover {
+      background-color: #7c64ad;
     }
 
-    .religion p {
+    .verse-box {
+      background-color: #f2ecff;
+      border-left: 4px solid #a485d8;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 700px;
+      border-radius: 6px;
+      text-align: left;
+    }
+
+    /* Prayer form */
+    .prayer-form {
+      margin-top: 40px;
+    }
+
+    .prayer-form input, .prayer-form textarea {
+      width: 90%;
+      max-width: 600px;
+      padding: 10px;
+      margin: 10px auto;
+      display: block;
+      font-family: 'Playfair Display', serif;
       font-size: 16px;
     }
 
-    .btn {
+    .prayer-form button {
       background-color: #a485d8;
       color: white;
-      padding: 8px 20px;
       border: none;
+      padding: 10px 25px;
+      font-size: 16px;
       border-radius: 5px;
-      font-size: 15px;
-      margin-top: 10px;
       cursor: pointer;
     }
 
-    .btn:hover {
+    .prayer-form button:hover {
       background-color: #7f64b6;
     }
 
-    /* JESUS INTRO */
-    .jesus-intro
+    footer {
+      background-color: #eee;
+      text-align: left;
+      padding: 20px;
+      font-size: 14px;
+      border-top: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Walk By Faith</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Support</a>
+      <a href="#">Gallery</a>
+      <a href="#">Contact</a>
+      <a href="#">Blog</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Start Your Faith Journey</h2>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EMOTIONS & SIN STRUGGLES -->
+  <section class="section" id="emotion-section">
+    <h2>Find Comfort in the Word</h2>
+    <p>Whatever you're feeling or struggling with, Jesus is here. Click below to find strength through Scripture.</p>
+
+    <div class="emotion-buttons">
+      <button onclick="showVerse('anger')">Anger</button>
+      <button onclick="showVerse('sadness')">Sadness</button>
+      <button onclick="showVerse('anxiety')">Anxiety</button>
+      <button onclick="showVerse('lust')">Lust</button>
+      <button onclick="showVerse('loneliness')">Loneliness</button>
+      <button onclick="showVerse('fear')">Fear</button>
+      <button onclick="showVerse('doubt')">Doubt</button>
+    </div>
+
+    <div id="verse-output" class="verse-box" style="display:none;"></div>
+  </section>
+
+  <!-- PRAYER REQUEST FORM -->
+  <section class="section">
+    <h2>Submit a Prayer Request</h2>
+    <form class="prayer-form" onsubmit="submitPrayer(event)">
+      <input type="text" placeholder="Your Name" required>
+      <textarea rows="5" placeholder="Type your prayer here..." required></textarea>
+      <button type="submit">Send Prayer</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>Works Cited:</strong><br>
+    Image credits via Unsplash: aaron-burden-MYu49bghVAM, kevin-cai-0kVQh23Jspo, abdullah-arfat-cg2LLJuS_wo, jared-rice-DDsD431IFX4, etc.
+  </footer>
+
+  <script>
+    function submitPrayer(e) {
+      e.preventDefault();
+      alert("Jesus cries with you and your help is on the way.");
+    }
+
+    const verses = {
+      anger: `
+        <strong>Anger:</strong><br>
+        God understands your frustration. He calls you to peace.<br>
+        - Proverbs 15:1 — "A soft answer turneth away wrath."<br>
+        - Ephesians 4:26 — "Be ye angry, and sin not..."<br>
+        - James 1:19 — "Let every man be swift to hear, slow to speak, slow to wrath."
+      `,
+      sadness: `
+        <strong>Sadness:</strong><br>
+        The Lord is close to the brokenhearted.<br>
+        - Psalm 34:18 — "The Lord is nigh unto them that are of a broken heart."<br>
+        - Revelation 21:4 — "God shall wipe away all tears."<br>
+        - John 16:22 — "Your sorrow shall be turned into joy."
+      `,
+      anxiety: `
+        <strong>Anxiety:</strong><br>
+        Trust God even when it’s hard.<br>
+        - Philippians 4:6 — "Be careful for nothing; but in every thing by prayer..."<br>
+        - Matthew 6:34 — "Take therefore no thought for the morrow."<br>
+        - 1 Peter 5:7 — "Casting all your care upon him..."
+      `,
+      lust: `
+        <strong>Lust:</strong><br>
+        Temptation is real, but God provides a way of escape.<br>
+        - Matthew 5:28 — "Whosoever looketh on a woman to lust... hath committed adultery."<br>
+        - 1 Corinthians 10:13 — "God... will with the temptation also make a way to escape."<br>
+        - Job 31:1 — "I made a covenant with mine eyes..."
+      `,
+      loneliness: `
+        <strong>Loneliness:</strong><br>
+        You are never truly alone in Christ.<br>
+        - Deuteronomy 31:6 — "He will not fail thee, nor forsake thee."<br>
+        - Psalm 68:6 — "God setteth the solitary in families."<br>
+        - Isaiah 41:10 — "Fear thou not; for I am with thee..."
+      `,
+      fear: `
+        <strong>Fear:</strong><br>
+        Perfect love casts out fear.<br>
+        - 2 Timothy 1:7 — "God hath not given us the spirit of fear..."<br>
+        - Isaiah 41:13 — "Fear not; I will help thee."<br>
+        - Psalm 23:4 — "I will fear no evil: for thou art with me..."
+      `,
+      doubt: `
+        <strong>Doubt:</strong><br>
+        When you doubt, ask God for wisdom.<br>
+        - James 1:5 — "If any of you lack wisdom, let him ask of God."<br>
+        - Mark 9:24 — "Lord, I believe; help thou mine unbelief."<br>
+        - Proverbs 3:5 — "Trust in the Lord with all thine heart..."
+      `
+    };
+
+    function showVerse(emotion) {
+      const output = document.getElementById("verse-output");
+      output.innerHTML = verses[emotion];
+      output.style.display = "block";
+    }
+  </script>
+</body>
+</html>
