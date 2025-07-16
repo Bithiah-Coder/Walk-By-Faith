@@ -3,227 +3,300 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Walk By Faith</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <title>Walk By Faith Church</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Playfair Display', serif;
-      background-color: #f9f6fb;
-      color: #1a1a1a;
       margin: 0;
-      padding: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #fdfbff;
+      color: #222;
     }
 
-    header {
-      background-color: black;
-      padding: 10px 0;
-      text-align: center;
-    }
-
+    /* NAVIGATION */
     nav {
+      background-color: #000;
+      color: white;
       display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
     }
 
-    nav a {
-      background-color: #e0c9f7;
-      color: black;
-      padding: 10px 20px;
-      text-decoration: none;
+    nav .logo {
+      font-size: 1.5em;
       font-weight: bold;
-      border-radius: 5px;
-      transition: background-color 0.3s;
     }
 
-    nav a:hover {
-      background-color: #c3a6e8;
+    nav .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      padding: 6px 12px;
+      background-color: #d8c3f3;
+      border-radius: 6px;
     }
 
+    /* HERO SECTION */
     .hero {
+      position: relative;
       text-align: center;
-      padding: 50px 20px;
     }
 
     .hero img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
-      border-radius: 10px;
+      max-height: 550px;
+      object-fit: cover;
     }
 
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-top: 20px;
+    .hero .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255,255,255,0.8);
+      padding: 20px 30px;
+      border-radius: 8px;
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      margin: 10px 0;
+    .hero .hero-text h1 {
+      margin: 0;
+      font-size: 2em;
     }
 
-    .btn {
-      background-color: #c3a6e8;
-      color: black;
-      font-weight: bold;
-      padding: 12px 24px;
-      border-radius: 5px;
-      text-decoration: none;
+    .hero .hero-text a {
       display: inline-block;
       margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #a678f2;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
     }
 
-    section {
-      padding: 40px 20px;
+    .purple-bar {
+      height: 10px;
+      background-color: #a678f2;
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 30px;
-      font-weight: bold;
-    }
-
+    /* RELIGION SECTION */
     .religions {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+      animation: fadeIn 2s ease-out;
     }
 
-    .religion-card {
-      max-width: 300px;
+    .religion {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      animation: slideUp 1s ease forwards;
+    }
+
+    .religion h2 {
+      text-align: center;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .religion img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .religion p {
+      padding: 10px 15px;
       text-align: center;
     }
 
-    .religion-card img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .religion-card h3 {
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .prayer-form,
-    .emotion-help {
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-    }
-
-    label, select, textarea {
+    .religion a {
       display: block;
-      width: 100%;
-      margin: 10px 0;
+      text-align: center;
+      margin: 10px auto 20px;
+      width: 120px;
+      padding: 8px 14px;
+      background-color: #a678f2;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* PRAYER SECTION */
+    .prayer-section {
+      padding: 40px 20px;
+      background-color: #f1edfc;
+      text-align: center;
+    }
+
+    .prayer-section input, .prayer-section textarea {
+      width: 90%;
+      max-width: 500px;
+      margin: 10px auto;
+      padding: 10px;
       font-family: 'Playfair Display', serif;
     }
 
+    .prayer-section button {
+      padding: 10px 20px;
+      background-color: #a678f2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* EMOTION SECTION */
+    .emotion-support {
+      padding: 40px 20px;
+      background-color: #f9f9ff;
+      text-align: center;
+    }
+
+    .emotion-support select {
+      padding: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .emotion-message {
+      margin-top: 20px;
+      font-style: italic;
+    }
+
+    /* FOOTER */
     footer {
-      background-color: #f0e8fc;
+      background-color: #222;
+      color: #ccc;
       text-align: center;
       padding: 20px;
-      font-size: 14px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      .religions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav .nav-links {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
+  <!-- NAVIGATION -->
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Support</a>
-    <a href="#">Gallery</a>
-    <a href="#">Contact</a>
-    <a href="#">Blog</a>
+    <div class="logo">Walk By Faith</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Support</a>
+      <a href="#">Gallery</a>
+      <a href="#">Contact</a>
+      <a href="#">Blog</a>
+    </div>
   </nav>
-</header>
 
-<section class="hero">
-  <img src="images/church-intro.jpg" alt="Church Intro Image">
-  <h1>Walk By Faith Church</h1>
-  <p>Founded on the truth of Yahweh, centered in Yeshua (Jesus), and committed to love, growth, and truth.</p>
-  <a class="btn" href="#">Start Your Faith Journey</a>
-</section>
+  <!-- HERO IMAGE -->
+  <div class="hero">
+    <img src="images/church-intro.jpg" alt="Church Intro Image">
+    <div class="hero-text">
+      <h1>Start Your Faith Journey</h1>
+      <a href="#prayer">Get Started</a>
+    </div>
+  </div>
 
-<section>
-  <h2 class="section-title">Understanding World Religions</h2>
+  <div class="purple-bar"></div>
+
+  <!-- RELIGIONS -->
   <div class="religions">
-    <div class="religion-card">
-      <h3>Christianity</h3>
+    <div class="religion">
+      <h2>Christianity</h2>
       <img src="images/christianity.jpg" alt="Christianity">
       <p>Christianity is based on the life and teachings of Jesus Christ. Many stories focus on love, sacrifice, and faith in God.</p>
-      <a class="btn" href="christianity.html">See More</a>
+      <a href="christianity.html">See More</a>
     </div>
-    <div class="religion-card">
-      <h3>Islam</h3>
+
+    <div class="religion">
+      <h2>Islam</h2>
       <img src="images/islam.jpg" alt="Islam">
       <p>Islam centers around the teachings of the Prophet Muhammad, emphasizing submission to God (Allah) and compassion for others.</p>
-      <a class="btn" href="#">See More</a>
+      <a href="#">See More</a>
     </div>
-    <div class="religion-card">
-      <h3>Hinduism</h3>
+
+    <div class="religion">
+      <h2>Hinduism</h2>
       <img src="images/hindu.jpg" alt="Hinduism">
       <p>Hinduism includes many deities and stories, often focused on karma, reincarnation, and balance between duty and devotion.</p>
-      <a class="btn" href="#">See More</a>
+      <a href="#">See More</a>
     </div>
-    <div class="religion-card">
-      <h3>Buddhism</h3>
+
+    <div class="religion">
+      <h2>Buddhism</h2>
       <img src="images/buddhism.jpg" alt="Buddhism">
       <p>Buddhism is rooted in the teachings of the Buddha, with stories highlighting mindfulness, the end of suffering, and inner peace.</p>
-      <a class="btn" href="#">See More</a>
+      <a href="#">See More</a>
     </div>
   </div>
-</section>
 
-<section>
-  <h2 class="section-title">Prayer Request</h2>
-  <div class="prayer-form">
-    <label for="prayer">Submit your prayer request:</label>
-    <textarea id="prayer" rows="4" placeholder="Type your prayer here..."></textarea>
-    <button class="btn">Submit Prayer</button>
+  <!-- PRAYER REQUEST -->
+  <div id="prayer" class="prayer-section">
+    <h2>Submit a Prayer Request</h2>
+    <form>
+      <input type="text" placeholder="Your Name"><br>
+      <input type="email" placeholder="Your Email"><br>
+      <textarea rows="5" placeholder="Type your prayer here..."></textarea><br>
+      <button type="submit">Send Prayer</button>
+    </form>
   </div>
-</section>
 
-<section>
-  <h2 class="section-title">Feeling Down?</h2>
-  <div class="emotion-help">
-    <label for="emotion">Choose your feeling:</label>
-    <select id="emotion" onchange="showVerse(this.value)">
-      <option value="">Select an emotion</option>
+  <!-- EMOTION SUPPORT -->
+  <div class="emotion-support">
+    <h2>Find Encouragement</h2>
+    <p>Choose how you're feeling:</p>
+    <select onchange="showMessage(this.value)">
+      <option value="">-- Select an emotion --</option>
       <option value="sad">Sad</option>
       <option value="angry">Angry</option>
-      <option value="lonely">Lonely</option>
       <option value="anxious">Anxious</option>
     </select>
-    <p id="verse"></p>
+    <div class="emotion-message" id="emotionMessage"></div>
   </div>
-</section>
 
-<section>
-  <h2 class="section-title">Interactive Story Game (Coming Soon!)</h2>
-  <p style="text-align:center;">Step into the shoes of Mary, Jesus, His disciples, and others He encountered. The journey begins soon with the birth of the Messiah.</p>
-</section>
+  <script>
+    function showMessage(feeling) {
+      const messages = {
+        sad: "“He healeth the broken in heart, and bindeth up their wounds.” — Psalm 147:3 (KJV)<br><br>God is near to the brokenhearted. You're not alone.",
+        angry: "“Be ye angry, and sin not: let not the sun go down upon your wrath.” — Ephesians 4:26 (KJV)<br><br>Pause, breathe. Let God guide your heart toward peace.",
+        anxious: "“Casting all your care upon him; for he careth for you.” — 1 Peter 5:7 (KJV)<br><br>Trust that God is already working behind the scenes."
+      };
+      document.getElementById("emotionMessage").innerHTML = messages[feeling] || "";
+    }
+  </script>
 
-<footer>
-  <p>All images sourced from Unsplash | Site by Bithiah Lloyd</p>
-</footer>
-
-<script>
-function showVerse(emotion) {
-  const verses = {
-    sad: "Psalm 34:18 - The Lord is nigh unto them that are of a broken heart...",
-    angry: "Ephesians 4:26 - Be ye angry, and sin not...",
-    lonely: "Deuteronomy 31:6 - Be strong and of a good courage; fear not...",
-    anxious: "Philippians 4:6 - Be careful for nothing; but in every thing by prayer..."
-  };
-  document.getElementById("verse").textContent = verses[emotion] || "";
-}
-</script>
+  <!-- FOOTER -->
+  <footer>
+    <p>Images courtesy of Unsplash. Website by Bithiah Lloyd.</p>
+  </footer>
 
 </body>
 </html>
