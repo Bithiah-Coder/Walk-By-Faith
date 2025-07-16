@@ -3,194 +3,227 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Walk By Faith Church</title>
-  <meta name="description" content="A KJV-based church committed to walking in truth, love, and faith. Learn about Jesus and discover how He transforms lives." />
+  <title>Walk By Faith</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #ffffff;
-      color: #000000;
+      background-color: #f9f6fb;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 0;
     }
 
     header {
-      background-color: #000000;
-      color: white;
-      padding: 10px 20px;
+      background-color: black;
+      padding: 10px 0;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      margin-top: 5px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     nav a {
-      color: white;
+      background-color: #e0c9f7;
+      color: black;
+      padding: 10px 20px;
       text-decoration: none;
-      font-size: 17px;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      background-color: #c3a6e8;
     }
 
     .hero {
-      position: relative;
       text-align: center;
-      color: white;
+      padding: 50px 20px;
     }
 
     .hero img {
-      width: 100%;
-      height: 70vh;
-      object-fit: cover;
-    }
-
-    .hero-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 30px;
+      max-width: 100%;
+      height: auto;
       border-radius: 10px;
     }
 
-    .hero-text h1 {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
-
-    .hero-text a {
-      background-color: #c5aee0;
-      padding: 10px 20px;
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      border-radius: 5px;
-    }
-
-    section {
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
-
-    .religion-img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    h3 {
-      font-weight: bold;
-      color: black;
-      font-size: 24px;
+    .hero h1 {
+      font-size: 2.5rem;
       margin-top: 20px;
     }
 
-    p {
-      font-size: 18px;
-      line-height: 1.6;
+    .hero p {
+      font-size: 1.2rem;
+      margin: 10px 0;
     }
 
-    .see-more-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #c5aee0;
-      color: white;
-      text-decoration: none;
+    .btn {
+      background-color: #c3a6e8;
+      color: black;
+      font-weight: bold;
+      padding: 12px 24px;
       border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 15px;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .religions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .religion-card {
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .religion-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .religion-card h3 {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .prayer-form,
+    .emotion-help {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+
+    label, select, textarea {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      font-family: 'Playfair Display', serif;
     }
 
     footer {
-      background-color: #000000;
-      color: white;
-      padding: 20px;
+      background-color: #f0e8fc;
       text-align: center;
+      padding: 20px;
       font-size: 14px;
-    }
-
-    footer a {
-      color: #b39ddb;
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Walk By Faith</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Support</a>
-      <a href="#">Gallery</a>
-      <a href="#">Contact</a>
-      <a href="#">Blog</a>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Support</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+    <a href="#">Blog</a>
+  </nav>
+</header>
 
-  <div class="hero">
-    <img src="images/church-intro.jpg" alt="Church Intro Image">
-    <div class="hero-text">
-      <h1>Start Your Faith Journey</h1>
-      <a href="#">Learn More</a>
+<section class="hero">
+  <img src="images/church-intro.jpg" alt="Church Intro Image">
+  <h1>Walk By Faith Church</h1>
+  <p>Founded on the truth of Yahweh, centered in Yeshua (Jesus), and committed to love, growth, and truth.</p>
+  <a class="btn" href="#">Start Your Faith Journey</a>
+</section>
+
+<section>
+  <h2 class="section-title">Understanding World Religions</h2>
+  <div class="religions">
+    <div class="religion-card">
+      <h3>Christianity</h3>
+      <img src="images/christianity.jpg" alt="Christianity">
+      <p>Christianity is based on the life and teachings of Jesus Christ. Many stories focus on love, sacrifice, and faith in God.</p>
+      <a class="btn" href="christianity.html">See More</a>
+    </div>
+    <div class="religion-card">
+      <h3>Islam</h3>
+      <img src="images/islam.jpg" alt="Islam">
+      <p>Islam centers around the teachings of the Prophet Muhammad, emphasizing submission to God (Allah) and compassion for others.</p>
+      <a class="btn" href="#">See More</a>
+    </div>
+    <div class="religion-card">
+      <h3>Hinduism</h3>
+      <img src="images/hindu.jpg" alt="Hinduism">
+      <p>Hinduism includes many deities and stories, often focused on karma, reincarnation, and balance between duty and devotion.</p>
+      <a class="btn" href="#">See More</a>
+    </div>
+    <div class="religion-card">
+      <h3>Buddhism</h3>
+      <img src="images/buddhism.jpg" alt="Buddhism">
+      <p>Buddhism is rooted in the teachings of the Buddha, with stories highlighting mindfulness, the end of suffering, and inner peace.</p>
+      <a class="btn" href="#">See More</a>
     </div>
   </div>
+</section>
 
-  <section>
-    <h2>Our Church Story</h2>
-    <p>Founded on the truth of Yahweh, centered in Yeshua (Jesus), and committed to love, growth, and truth. Walk By Faith began as a calling to teach the Gospel in spirit and in truth, following the King James Version of the Bible and the love of Christ for all people.</p>
-  </section>
+<section>
+  <h2 class="section-title">Prayer Request</h2>
+  <div class="prayer-form">
+    <label for="prayer">Submit your prayer request:</label>
+    <textarea id="prayer" rows="4" placeholder="Type your prayer here..."></textarea>
+    <button class="btn">Submit Prayer</button>
+  </div>
+</section>
 
-  <section>
-    <h2>Understanding World Religions</h2>
+<section>
+  <h2 class="section-title">Feeling Down?</h2>
+  <div class="emotion-help">
+    <label for="emotion">Choose your feeling:</label>
+    <select id="emotion" onchange="showVerse(this.value)">
+      <option value="">Select an emotion</option>
+      <option value="sad">Sad</option>
+      <option value="angry">Angry</option>
+      <option value="lonely">Lonely</option>
+      <option value="anxious">Anxious</option>
+    </select>
+    <p id="verse"></p>
+  </div>
+</section>
 
-    <img class="religion-img" src="images/christianity.jpg" alt="Christianity Image">
-    <h3>Christianity</h3>
-    <p>Christianity is centered on Jesus Christ, the Son of God, who came to save the world through love, sacrifice, and truth.</p>
-    <a class="see-more-btn" href="#">See More</a>
-    <hr>
+<section>
+  <h2 class="section-title">Interactive Story Game (Coming Soon!)</h2>
+  <p style="text-align:center;">Step into the shoes of Mary, Jesus, His disciples, and others He encountered. The journey begins soon with the birth of the Messiah.</p>
+</section>
 
-    <img class="religion-img" src="images/islam.jpg" alt="Islam Image">
-    <h3>Islam</h3>
-    <p>Islam is based on submission to God (Allah) and the teachings of Prophet Muhammad.</p>
-    <hr>
+<footer>
+  <p>All images sourced from Unsplash | Site by Bithiah Lloyd</p>
+</footer>
 
-    <img class="religion-img" src="images/hindu.jpg" alt="Hinduism Image">
-    <h3>Hinduism</h3>
-    <p>Hinduism embraces reincarnation, karma, and a deep sense of devotion and spiritual duty.</p>
-    <hr>
-
-    <img class="religion-img" src="images/buddhism.jpg" alt="Buddhism Image">
-    <h3>Buddhism</h3>
-    <p>Buddhism follows the teachings of the Buddha and focuses on mindfulness, compassion, and peace.</p>
-  </section>
-
-  <section style="background-color: #fdf8f2;">
-    <h2>Walk in Their Shoes – Interactive Game (Coming Soon)</h2>
-    <p>Experience the stories of Jesus, His disciples, and those He healed. This upcoming interactive journey lets you step into the lives of Biblical figures and walk through the Gospel in a new and powerful way.</p>
-    <a class="see-more-btn" href="#">Preview Game</a>
-  </section>
-
-  <footer>
-    <p>All images sourced via <a href="https://unsplash.com" target="_blank">Unsplash</a> | Site by <strong>Bithiah Lloyd</strong> | &copy; 2025 Walk By Faith Church</p>
-  </footer>
+<script>
+function showVerse(emotion) {
+  const verses = {
+    sad: "Psalm 34:18 - The Lord is nigh unto them that are of a broken heart...",
+    angry: "Ephesians 4:26 - Be ye angry, and sin not...",
+    lonely: "Deuteronomy 31:6 - Be strong and of a good courage; fear not...",
+    anxious: "Philippians 4:6 - Be careful for nothing; but in every thing by prayer..."
+  };
+  document.getElementById("verse").textContent = verses[emotion] || "";
+}
+</script>
 
 </body>
 </html>
