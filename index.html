@@ -13,6 +13,7 @@
       color: #333;
     }
 
+    /* NAVIGATION */
     header {
       background-color: #000;
       display: flex;
@@ -23,13 +24,13 @@
 
     header h1 {
       color: white;
-      margin: 0;
       font-size: 20px;
+      margin: 0;
     }
 
     nav a {
-      background-color: #d9c8f3;
       color: black;
+      background-color: #d9c8f3;
       text-decoration: none;
       margin-left: 10px;
       padding: 8px 14px;
@@ -41,6 +42,7 @@
       background-color: #c4a9f0;
     }
 
+    /* HERO */
     .hero {
       position: relative;
       background-image: url('images/church-intro.jpg');
@@ -51,14 +53,6 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 36px;
-      color: white;
-      background-color: rgba(0,0,0,0.6);
-      padding: 10px 20px;
-      border-radius: 8px;
     }
 
     .hero .btn {
@@ -73,34 +67,47 @@
       cursor: pointer;
     }
 
-    .btn:hover {
+    .hero .btn:hover {
       background-color: #7f64b6;
     }
 
     .divider {
       background-color: #dcd2f0;
       height: 25px;
+      width: 100%;
     }
 
+    /* RELIGION SECTION */
     .religion-section {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin: 30px auto;
       gap: 30px;
       max-width: 1200px;
-      padding: 20px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     .religion {
-      width: 260px;
+      flex: 1 1 250px;
+      max-width: 300px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
       text-align: center;
       animation: slideIn 1s ease-in-out;
     }
 
+    @keyframes slideIn {
+      from { transform: translateX(-40px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
     .religion img {
       width: 100%;
-      border-radius: 8px;
+      height: auto;
+      border-radius: 6px;
     }
 
     .religion h3 {
@@ -113,39 +120,53 @@
       font-size: 15px;
     }
 
-    @keyframes slideIn {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    .emotion-section, .repent-section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #f3effb;
-      border-radius: 10px;
-    }
-
-    .emotion-section h2, .repent-section h2 {
-      color: #5c3c9e;
-    }
-
-    .emotion-buttons button {
-      margin: 5px;
-      padding: 8px 12px;
-      border: none;
+    .see-more {
       background-color: #a485d8;
       color: white;
+      border: none;
+      padding: 8px 20px;
       border-radius: 5px;
       cursor: pointer;
     }
 
-    .emotion-result {
-      margin-top: 10px;
-      font-style: italic;
+    .see-more:hover {
+      background-color: #7f64b6;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .emotion-buttons button {
+      margin: 5px;
+      padding: 10px 16px;
+      background-color: #a485d8;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .emotion-buttons button:hover {
+      background-color: #7c64ad;
+    }
+
+    .verse-box {
+      background-color: #f2ecff;
+      border-left: 4px solid #a485d8;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 700px;
+      border-radius: 6px;
+      text-align: left;
     }
 
     .prayer-form {
+      margin-top: 40px;
       max-width: 500px;
       margin: 30px auto;
       padding: 20px;
@@ -156,9 +177,21 @@
     .prayer-form input, .prayer-form textarea {
       width: 100%;
       padding: 10px;
-      margin: 8px 0;
+      margin: 10px auto;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
       border-radius: 5px;
       border: 1px solid #ccc;
+    }
+
+    .prayer-form button {
+      background-color: #a485d8;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     .confirmation {
@@ -167,34 +200,44 @@
       padding: 15px;
       margin-top: 10px;
       border-radius: 5px;
-      display: none;
     }
 
-    .see-more {
-      background-color: #a485d8;
+    .repent-section {
+      background-color: #f3effb;
+      border-radius: 10px;
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 800px;
+    }
+
+    .repent-section h2 {
+      color: #5c3c9e;
+    }
+
+    footer {
+      background-color: #000;
       color: white;
-      padding: 7px 15px;
-      border-radius: 5px;
-      border: none;
-      margin-top: 10px;
-      cursor: pointer;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
     }
 
     .works-cited {
       font-size: 13px;
-      padding: 20px;
-      background: #eee;
       color: #444;
+      background: #eee;
+      padding: 20px;
+      text-align: left;
     }
 
-    footer {
+    .coming-soon {
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
+      margin-top: 40px;
+      font-style: italic;
+      color: #888;
     }
   </style>
 </head>
-
 <body>
   <header>
     <h1>Walk By Faith</h1>
@@ -208,13 +251,15 @@
   </header>
 
   <section class="hero">
-    <h2>Founded in Truth, Rooted in Yeshua</h2>
     <button class="btn">Start Your Faith Journey</button>
   </section>
 
   <div class="divider"></div>
 
-  <h2 style="text-align: center; margin-top: 40px;">Learn more about other religions here.</h2>
+  <section class="section">
+    <h2>Learn more about other religions here.</h2>
+    <p>Jesus came to save all who would receive Him. Learning about others can help us understand our calling deeper while staying rooted in truth.</p>
+  </section>
 
   <section class="religion-section">
     <div class="religion">
@@ -223,21 +268,18 @@
       <p>Centered on the life and teachings of Jesus Christ. Stories emphasize love, sacrifice, and redemption.</p>
       <button class="see-more" onclick="window.location.href='christianity.html'">See More</button>
     </div>
-
     <div class="religion">
       <h3>Islam</h3>
       <img src="images/islam.jpg" alt="Islam">
       <p>Focuses on submission to God (Allah) and the teachings of Prophet Muhammad, promoting peace and charity.</p>
       <button class="see-more">See More</button>
     </div>
-
     <div class="religion">
       <h3>Hinduism</h3>
       <img src="images/hindu.jpg" alt="Hinduism">
       <p>Rooted in spiritual practices, karma, and devotion to various deities like Vishnu and Shiva.</p>
       <button class="see-more">See More</button>
     </div>
-
     <div class="religion">
       <h3>Buddhism</h3>
       <img src="images/buddhism.jpg" alt="Buddhism">
@@ -248,31 +290,38 @@
 
   <section class="repent-section">
     <h2>How to Repent According to the KJV Bible</h2>
-    <p>True repentance is turning away from sin and choosing to follow God's will. The Bible says in Acts 2:38, "Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins..." Begin with heartfelt sorrow, confess to God, and surrender your life to Him. Jesus will forgive and cleanse you from all unrighteousness (1 John 1:9).</p>
+    <p>Repentance is more than words. It's a turning away from sin, a heartfelt surrender, and an act of faith. Acts 3:19 says, "Repent ye therefore, and be converted, that your sins may be blotted out..." If you confess, believe, and turn your life toward Christ, He will forgive and restore you (1 John 1:9).</p>
   </section>
 
-  <section class="emotion-section">
+  <section class="section">
     <h2>What Are You Feeling?</h2>
-    <p>Click on an emotion or struggle, and receive Bible verses and comfort based on the Word of God.</p>
     <div class="emotion-buttons">
       <button onclick="showVerse('anger')">Anger</button>
       <button onclick="showVerse('sadness')">Sadness</button>
+      <button onclick="showVerse('anxiety')">Anxiety</button>
       <button onclick="showVerse('lust')">Lust</button>
+      <button onclick="showVerse('loneliness')">Loneliness</button>
+      <button onclick="showVerse('fear')">Fear</button>
+      <button onclick="showVerse('doubt')">Doubt</button>
     </div>
-    <div id="verse" class="emotion-result"></div>
+    <div id="verse-output" class="verse-box" style="display:none;"></div>
   </section>
 
   <section class="prayer-form">
     <h2>Submit a Prayer Request</h2>
-    <input type="text" placeholder="Your Name">
-    <textarea rows="4" placeholder="Your Prayer..."></textarea>
-    <button class="btn" onclick="showConfirmation()">Send Prayer</button>
-    <div class="confirmation" id="confirmationMsg">Jesus cries with you and your help is on the way.</div>
+    <input type="text" placeholder="Your Name" required>
+    <textarea rows="5" placeholder="Your Prayer..." required></textarea>
+    <button onclick="showConfirmation()">Send Prayer</button>
+    <div class="confirmation" id="confirmationMsg" style="display:none;">Jesus cries with you and your help is on the way.</div>
   </section>
+
+  <div class="coming-soon">
+    <p><strong>Interactive Story Game Coming Soon:</strong> Walk through the life of Jesus, His disciples, and those He transformed — starting with Mary and the prophecy of the Messiah.</p>
+  </div>
 
   <section class="works-cited">
     <strong>Works Cited:</strong><br>
-    Unsplash Religious Images:<br>
+    Image credits via Unsplash:<br>
     - Intro: aaron-burden-MYu49bghVAM-unsplash.jpg<br>
     - Christianity: brown-sand-0kVQh23Jspo.jpg<br>
     - Islam: open-book-cg2LLJuS_wo.jpg<br>
@@ -280,23 +329,29 @@
     - Buddhism: monk-in-corridor-DDsD431IFX4.jpg
   </section>
 
-  <footer>&copy; 2025 Walk By Faith Church | Created by Bithiah Lloyd</footer>
+  <footer>
+    &copy; 2025 Walk By Faith Church | Created by Bithiah Lloyd
+  </footer>
 
   <script>
-    function showVerse(emotion) {
-      let verse = "";
-      if (emotion === "anger") {
-        verse = "Proverbs 15:1 – A soft answer turneth away wrath...\nEphesians 4:26 – Be ye angry, and sin not...";
-      } else if (emotion === "sadness") {
-        verse = "Psalm 34:18 – The LORD is nigh unto them that are of a broken heart...\nRevelation 21:4 – God shall wipe away all tears...";
-      } else if (emotion === "lust") {
-        verse = "1 Corinthians 10:13 – God is faithful, who will not suffer you to be tempted above that ye are able...\nMatthew 5:28 – Whosoever looketh on a woman to lust...";
-      }
-      document.getElementById("verse").innerText = verse;
+    const verses = {
+      anger: "Proverbs 15:1 – A soft answer turneth away wrath.\\nEphesians 4:26 – Be ye angry, and sin not...",
+      sadness: "Psalm 34:18 – The LORD is nigh unto them that are of a broken heart.\\nJohn 16:22 – Your sorrow shall be turned into joy.",
+      anxiety: "Philippians 4:6 – Be careful for nothing...\\n1 Peter 5:7 – Casting all your care upon him...",
+      lust: "Matthew 5:28 – Whosoever looketh on a woman to lust...\\n1 Corinthians 10:13 – God is faithful...",
+      loneliness: "Deuteronomy 31:6 – He will not fail thee...\\nIsaiah 41:10 – Fear not; for I am with thee.",
+      fear: "2 Timothy 1:7 – God hath not given us the spirit of fear...\\nPsalm 23:4 – I will fear no evil...",
+      doubt: "James 1:5 – If any of you lack wisdom, let him ask of God.\\nMark 9:24 – Help thou mine unbelief."
+    };
+
+    function showVerse(feeling) {
+      const output = document.getElementById("verse-output");
+      output.style.display = "block";
+      output.innerText = verses[feeling];
     }
 
     function showConfirmation() {
-      document.querySelector('.prayer-form').innerHTML = `<div class="confirmation">Jesus cries with you and your help is on the way.</div>`;
+      document.querySelector('.prayer-form').innerHTML = '<div class="confirmation">Jesus cries with you and your help is on the way.</div>';
     }
   </script>
 </body>
