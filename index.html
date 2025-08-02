@@ -14,24 +14,30 @@
     header {
       background-color: #000;
       color: white;
-      padding: 10px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 20px;
+      text-align: center;
     }
 
     header h1 {
-      font-size: 20px;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
 
     nav a {
       background-color: #d9c8f3;
       color: black;
       text-decoration: none;
-      margin-left: 10px;
       padding: 8px 14px;
       border-radius: 6px;
       font-weight: bold;
+      transition: background-color 0.3s ease;
     }
 
     nav a:hover {
@@ -61,23 +67,24 @@
       bottom: 30px;
     }
 
-    .white-section {
-      background-color: white;
+    .white-section,
+    .gray-section,
+    .black-section {
       padding: 40px 20px;
       text-align: center;
+    }
+
+    .white-section {
+      background-color: white;
+    }
+
+    .gray-section {
+      background-color: #f0f0f0;
     }
 
     .black-section {
       background-color: black;
       color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .gray-section {
-      background-color: #f0f0f0;
-      padding: 40px 20px;
-      text-align: center;
     }
 
     .religion-section {
@@ -87,7 +94,6 @@
       gap: 30px;
     }
 
-    /* Slide-in start state */
     .religion {
       background-color: white;
       width: 250px;
@@ -96,13 +102,11 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
       position: relative;
-
       opacity: 0;
       transform: translateX(-50px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
-    /* Slide-in visible */
     .religion.visible {
       opacity: 1;
       transform: translateX(0);
@@ -177,6 +181,12 @@
       font-size: 13px;
       text-align: left;
     }
+
+    @media screen and (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
@@ -186,6 +196,9 @@
   <nav>
     <a href="#home">Home</a>
     <a href="contact.html">Contact</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="game.html">Interactive Game</a>
+    <a href="testimony.html">Testimony</a>
   </nav>
 </header>
 
@@ -201,6 +214,8 @@
 <section class="gray-section" id="religions">
   <h2>Learn More About Other Religions</h2>
   <div class="religion-section">
+    <!-- Religion Cards here (same as your original) -->
+    <!-- Christianity -->
     <div class="religion">
       <h3>Christianity</h3>
       <img src="images/christianity.jpg" alt="Christianity">
@@ -208,6 +223,7 @@
       <button class="see-more" data-info="Christianity-info">See More</button>
       <p class="extra-info" id="Christianity-info">Christianity teaches that Jesus Christ is the Son of God who died for humanity’s sins and rose again, offering eternal life to all who believe.</p>
     </div>
+    <!-- Islam -->
     <div class="religion">
       <h3>Islam</h3>
       <img src="images/islam.jpg" alt="Islam">
@@ -215,6 +231,7 @@
       <button class="see-more" data-info="Islam-info">See More</button>
       <p class="extra-info" id="Islam-info">Islam is a monotheistic faith centered on the Quran and the prophet Muhammad, emphasizing submission to the will of Allah and living a righteous life.</p>
     </div>
+    <!-- Hinduism -->
     <div class="religion">
       <h3>Hinduism</h3>
       <img src="images/hindu.jpg" alt="Hinduism">
@@ -222,6 +239,7 @@
       <button class="see-more" data-info="Hinduism-info">See More</button>
       <p class="extra-info" id="Hinduism-info">Hinduism encompasses a variety of traditions focused on karma, dharma, and liberation from the cycle of rebirth through spiritual knowledge.</p>
     </div>
+    <!-- Buddhism -->
     <div class="religion">
       <h3>Buddhism</h3>
       <img src="images/buddhism.jpg" alt="Buddhism">
@@ -254,7 +272,6 @@
 </footer>
 
 <script>
-  // Toggle extra info paragraphs on See More button click
   document.querySelectorAll('.see-more').forEach(button => {
     button.addEventListener('click', () => {
       const infoId = button.getAttribute('data-info');
@@ -263,32 +280,26 @@
         infoParagraph.style.display = 'none';
         button.textContent = 'See More';
       } else {
-        // Hide all other paragraphs
         document.querySelectorAll('.extra-info').forEach(p => p.style.display = 'none');
-        // Reset all buttons text
         document.querySelectorAll('.see-more').forEach(btn => btn.textContent = 'See More');
-        // Show the clicked one
         infoParagraph.style.display = 'block';
         button.textContent = 'See Less';
       }
     });
   });
 
-  // Prayer form submission handler
   function handlePrayerSubmit(event) {
     event.preventDefault();
     alert('Jesus cries with you and your help is on the way.');
     event.target.reset();
   }
 
-  // Slide-in animation for religion cards on scroll
   const religionCards = document.querySelectorAll('.religion');
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // animate once only
+        observer.unobserve(entry.target);
       }
     });
   }, {
