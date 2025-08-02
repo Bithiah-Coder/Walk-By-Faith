@@ -6,8 +6,11 @@
   <title>Walk By Faith - Gallery</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
   <style>
-    body {
+    /* Reset margin and padding, ensure full width */
+    html, body {
       margin: 0;
+      padding: 0;
+      width: 100%;
       font-family: 'Playfair Display', serif;
       background-color: white;
       color: black;
@@ -41,7 +44,6 @@
       border-radius: 6px;
       font-weight: bold;
       transition: background-color 0.3s ease;
-      font-family: 'Playfair Display', serif;
       text-align: center;
       display: inline-block;
     }
@@ -56,12 +58,17 @@
       align-items: center;
       gap: 2em;
       padding: 2em;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .video-wrapper {
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      width: 100%;
+      display: flex;
+      justify-content: center; /* center video horizontally */
     }
 
     .video-wrapper.visible {
@@ -70,10 +77,13 @@
     }
 
     video {
+      display: block;
+      margin: 0 auto;
       width: 80%;
       max-width: 800px;
       border-radius: 8px;
       outline: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
     footer {
