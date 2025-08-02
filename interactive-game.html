@@ -3,197 +3,188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Interactive Game - Walk By Faith</title>
+  <title>Interactive Faith Game</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #f6f5fa;
+      background-color: #f9f7fb;
       color: #000;
     }
 
     header {
       background-color: black;
+      color: white;
       padding: 1rem;
       text-align: center;
     }
 
-    header a {
+    header nav a {
       color: white;
-      text-decoration: none;
-      font-size: 1.5rem;
       margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
+    section {
+      padding: 3rem 2rem;
+      text-align: center;
     }
 
-    .scene {
-      margin: 3rem 0;
+    .slide-in {
       opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease-out;
-      border-radius: 15px;
-      background-color: #fff;
-      padding: 1rem;
-      box-shadow: 0 0 15px rgba(200, 160, 255, 0.3);
+      transform: translateY(40px);
+      transition: all 1s ease-out;
     }
 
-    .scene.visible {
+    .slide-in.visible {
       opacity: 1;
       transform: translateY(0);
-      box-shadow: 0 0 25px rgba(200, 160, 255, 0.7);
+      box-shadow: 0 0 20px #d6c8eb;
+      border-radius: 20px;
     }
 
-    .scene img {
+    .image-block {
+      margin: 3rem auto;
+      max-width: 800px;
+    }
+
+    .image-block img {
       width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 5px solid rgba(200, 160, 255, 0.6);
-    }
-
-    .scene p {
-      margin-top: 1rem;
-      font-size: 1.2rem;
+      border-radius: 20px;
     }
 
     .quiz {
-      background-color: #eee;
+      background-color: #eee7f7;
       padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(200, 160, 255, 0.5);
-      margin-top: 4rem;
+      margin-top: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #d6c8eb;
     }
 
     .quiz h2 {
-      text-align: center;
+      margin-bottom: 1rem;
     }
 
     .quiz label {
       display: block;
-      margin: 1rem 0 0.5rem;
+      margin: 0.5rem 0;
     }
 
-    .quiz input[type="text"] {
-      width: 100%;
-      padding: 0.5rem;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .quiz button {
+    .submit-btn {
       margin-top: 1rem;
-      padding: 0.7rem 2rem;
-      background-color: #c0a4f7;
+      background-color: #d6c8eb;
       border: none;
-      color: white;
+      padding: 0.5rem 1rem;
       font-weight: bold;
-      font-size: 1rem;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
     }
 
-    footer {
-      background-color: black;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      margin-top: 3rem;
+    .result {
+      font-weight: bold;
+      margin-top: 1rem;
     }
   </style>
 </head>
 <body>
 
-  <header>
+<header>
+  <nav>
     <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="testimony.html">Testimony</a>
+    <a href="interactive-game.html">Game</a>
     <a href="contact.html">Contact</a>
-  </header>
+  </nav>
+</header>
 
-  <div class="container">
-    <div class="scene">
-      <img src="images/BirthingofJesus.jpg" alt="Mary giving birth to Jesus">
-      <p>In a quiet, humble place, a miracle took place. Mary gave birth to a son—His name was Jesus. The world didn’t notice, but heaven rejoiced.</p>
-    </div>
+<section>
+  <h1>Journey Through the Birth of Jesus</h1>
+  <p>Scroll to discover the story... then test what you’ve learned.</p>
+</section>
 
-    <div class="scene">
-      <img src="images/CouldItBeTheMessiah.jpg" alt="Could it be the Messiah?">
-      <p>Many wondered: could this truly be the promised Messiah? Prophets had spoken of His coming. Now, here He was—swaddled in cloth, resting in a manger.</p>
-    </div>
+<section class="image-block slide-in">
+  <h2>It began in a humble stable...</h2>
+  <img src="images/BirthingofJesus.jpg" alt="The birth of Jesus">
+</section>
 
-    <div class="scene">
-      <img src="images/FearNot.jpg" alt="Angel comforting Mary and Joseph">
-      <p>Fear not, the angel said. This child was sent from God, to save His people. Mary and Joseph didn’t have all the answers, but they believed.</p>
-    </div>
+<section class="image-block slide-in">
+  <h2>Could it be... the Messiah?</h2>
+  <img src="images/Could it be the Messiah?.jpg" alt="Could it be the Messiah">
+</section>
 
-    <div class="scene">
-      <img src="images/MaryWrapsJesus.jpg" alt="Mary wrapping Jesus in cloth">
-      <p>Mary wrapped Him gently, her heart full of awe. She knew this wasn’t just her child—this was the Son of God. Emmanuel. God with us.</p>
-    </div>
+<section class="image-block slide-in">
+  <h2>“Fear not,” the angel said...</h2>
+  <img src="images/Fear Not.jpg" alt="Angel speaking">
+</section>
 
-    <div class="quiz">
-      <h2>Quick Quiz</h2>
-      <form id="quizForm">
-        <label>1. Who gave birth to Jesus?</label>
-        <input type="text" name="q1" required />
+<section class="image-block slide-in">
+  <h2>Mary wraps Jesus in swaddling clothes.</h2>
+  <img src="images/MaryWrapsJesus.jpg" alt="Mary and Jesus">
+</section>
 
-        <label>2. What was the baby's name?</label>
-        <input type="text" name="q2" required />
+<section class="quiz">
+  <h2>Test Your Knowledge</h2>
+  <form id="quizForm">
+    <label>
+      1. Who gave birth to Jesus?
+      <br>
+      <input type="text" name="q1" />
+    </label>
+    <label>
+      2. What was the baby's name?
+      <br>
+      <input type="text" name="q2" />
+    </label>
+    <label>
+      3. What is another name for Jesus Christ?
+      <br>
+      <input type="text" name="q3" />
+    </label>
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+  <div class="result" id="result"></div>
+</section>
 
-        <label>3. What's another name for Jesus Christ?</label>
-        <input type="text" name="q3" required />
-
-        <button type="submit">Submit Answers</button>
-      </form>
-      <div id="quizResult" style="margin-top:1rem;font-weight:bold;"></div>
-    </div>
-  </div>
-
-  <footer>
-    <p>© 2025 Walk By Faith | Images © Unsplash & Storytelling by Bithiah Lloyd</p>
-  </footer>
-
-  <script>
-    // Slide-in effect on scroll
-    const scenes = document.querySelectorAll('.scene');
-    window.addEventListener('scroll', () => {
-      scenes.forEach(scene => {
-        const rect = scene.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          scene.classList.add('visible');
-        }
-      });
-    });
-
-    // Quiz logic
-    document.getElementById("quizForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const answers = {
-        q1: "mary",
-        q2: "jesus",
-        q3: "emmanuel"
-      };
-
-      let score = 0;
-      const formData = new FormData(this);
-      for (let [key, value] of formData.entries()) {
-        if (value.trim().toLowerCase() === answers[key]) {
-          score++;
-        }
-      }
-
-      const result = document.getElementById("quizResult");
-      if (score === 3) {
-        result.textContent = "🌟 Perfect! You’re walking by faith!";
-      } else {
-        result.textContent = `You got ${score}/3. Keep learning and growing in faith!`;
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
       }
     });
-  </script>
+  });
+
+  document.querySelectorAll('.slide-in').forEach(el => {
+    observer.observe(el);
+  });
+
+  document.getElementById("quizForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const answers = {
+      q1: "mary",
+      q2: "jesus",
+      q3: "messiah"
+    };
+
+    let correct = 0;
+    const formData = new FormData(this);
+    for (let [key, value] of formData.entries()) {
+      if (value.trim().toLowerCase() === answers[key]) {
+        correct++;
+      }
+    }
+
+    const resultText = document.getElementById("result");
+    if (correct === 3) {
+      resultText.innerText = "👏 Great job! You passed!";
+    } else {
+      resultText.innerText = `You got ${correct}/3 correct. Try again!`;
+    }
+  });
+</script>
 
 </body>
 </html>
