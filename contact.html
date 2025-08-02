@@ -2,131 +2,215 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Walk By Faith</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
   <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Playfair Display', serif;
       margin: 0;
-      background-color: #f2f0f7;
-      color: #333;
+      padding-top: 110px; /* height of fixed header/nav */
+      font-family: 'Playfair Display', serif;
+      background-color: #EADCF5; /* pinkish-light-purple */
+      color: black;
+    }
+
+    /* Fixed top black bar wrapper for header + nav */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      z-index: 9999;
+      /* Make it tall enough for header + nav */
+      height: 110px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header {
+      margin: 0;
+      font-size: 24px; /* matching home page */
+      font-weight: bold;
+      color: white;
+      padding: 10px 0 0 0;
+      line-height: 1;
+      letter-spacing: 0; /* NO letter spacing */
+      user-select: none;
     }
 
     nav {
-      background-color: #e5dbf4;
+      margin-top: 6px;
       display: flex;
       justify-content: center;
-      padding: 10px;
+      width: 100%;
       gap: 15px;
+      padding-bottom: 12px;
     }
 
     nav a {
+      background-color: #D6C8EB; /* light purple */
+      color: black;
       text-decoration: none;
-      color: #5e3d98;
-      padding: 8px 16px;
-      border-radius: 8px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: 'Playfair Display', serif;
       font-weight: bold;
       transition: background-color 0.3s ease;
+      white-space: nowrap;
     }
 
     nav a:hover {
-      background-color: #d1c2ec;
+      background-color: #c7b1e3;
     }
 
-    main {
-      max-width: 700px;
+    .container {
+      max-width: 600px;
       margin: 40px auto;
-      background-color: #fff;
-      padding: 30px;
+      padding: 20px;
+      background: white;
       border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      animation: fadeInUp 1s ease-out;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: slideFadeIn 0.8s forwards ease-out;
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
+    .container.hidden {
+      opacity: 0 !important;
+      transform: translateX(-50px) !important;
+      pointer-events: none;
+      height: 0;
+      margin: 0 auto;
+      padding: 0;
+      overflow: hidden;
+      transition: opacity 0.6s ease, transform 0.6s ease, height 0.6s ease, padding 0.6s ease, margin 0.6s ease;
+    }
+
+    @keyframes slideFadeIn {
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
       }
     }
 
-    h1 {
-      color: #5e3d98;
+    h2 {
       text-align: center;
-      margin-bottom: 20px;
+      color: #4B0082;
+      margin-bottom: 10px;
     }
 
-    p {
+    p.description {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
+      font-size: 1.1em;
+      line-height: 1.4;
     }
 
     form {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+    }
+
+    label {
+      margin: 10px 0 5px;
+      font-weight: 600;
     }
 
     input, textarea {
-      padding: 12px;
-      font-size: 1rem;
+      padding: 10px;
       border: 1px solid #ccc;
       border-radius: 8px;
+      font-size: 16px;
+      font-family: 'Playfair Display', serif;
       resize: vertical;
     }
 
     button {
-      background-color: #a485d8;
-      color: white;
+      margin-top: 20px;
+      background-color: #D6C8EB;
+      color: black;
       padding: 12px;
-      font-size: 1rem;
       border: none;
-      border-radius: 8px;
+      border-radius: 5px;
+      font-size: 18px;
       cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
       transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: #8f6ccc;
+      background-color: #c7b1e3;
     }
 
     footer {
-      background-color: #000;
-      color: #fff;
-      padding: 10px 0;
+      background-color: black;
+      color: white;
       text-align: center;
-      margin-top: 50px;
+      padding: 10px;
+      font-size: 14px;
+      margin-top: 60px;
+      font-family: 'Playfair Display', serif;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="game.html">Interactive Game</a>
-    <a href="testimony.html">Testimony</a>
-    <a href="contact.html">Contact</a>
-  </nav>
 
-  <main>
-    <h1>Get in Touch</h1>
-    <p title="Click to send me an email!">You can reach me directly at <a href="mailto:lloydbithiah77@gmail.com" style="color:#5e3d98;">lloydbithiah77@gmail.com</a> or use the form below.</p>
-    
-    <form>
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+  <div class="top-bar">
+    <header>Walk By Faith</header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="interactive.html">Interactive Story</a>
+      <a href="testimony.html">Testimony</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <div class="container" id="contact-container">
+    <h2>Get in Touch</h2>
+    <p class="description">You can reach me directly at <strong>lloydbithiah77@gmail.com</strong> or use the form below. Would love to hear <em>your</em> story!</p>
+    <form id="contact-form" onsubmit="handleSubmit(event)">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Submit</button>
     </form>
-  </main>
+  </div>
 
   <footer>
-    &copy; 2025 Bithiah Lloyd | All rights reserved
+    &copy; 2025 Walk By Faith. All rights reserved.
   </footer>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const container = document.getElementById('contact-container');
+      container.classList.add('hidden');
+
+      setTimeout(() => {
+        document.getElementById('contact-form').reset();
+        container.classList.remove('hidden');
+        void container.offsetWidth; // Trigger reflow
+        container.style.animation = 'slideFadeIn 0.8s forwards ease-out';
+      }, 3000);
+    }
+  </script>
+
 </body>
 </html>
