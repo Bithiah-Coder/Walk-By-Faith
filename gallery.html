@@ -6,11 +6,8 @@
   <title>Walk By Faith - Gallery</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
   <style>
-    /* Reset margin and padding, ensure full width */
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      width: 100%;
       font-family: 'Playfair Display', serif;
       background-color: white;
       color: black;
@@ -44,6 +41,7 @@
       border-radius: 6px;
       font-weight: bold;
       transition: background-color 0.3s ease;
+      font-family: 'Playfair Display', serif;
       text-align: center;
       display: inline-block;
     }
@@ -58,17 +56,12 @@
       align-items: center;
       gap: 2em;
       padding: 2em;
-      width: 100%;
-      box-sizing: border-box;
     }
 
     .video-wrapper {
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      width: 100%;
-      display: flex;
-      justify-content: center; /* center video horizontally */
     }
 
     .video-wrapper.visible {
@@ -77,13 +70,10 @@
     }
 
     video {
-      display: block;
-      margin: 0 auto;
       width: 80%;
       max-width: 800px;
       border-radius: 8px;
       outline: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
     footer {
@@ -92,6 +82,15 @@
       text-align: center;
       padding: 1em;
       font-size: 0.9em;
+    }
+
+    footer .works-cited {
+      text-align: left;
+      font-size: 0.8em;
+      margin-bottom: 0.8em;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     @media screen and (max-width: 600px) {
@@ -137,7 +136,9 @@
   </section>
 
   <footer>
-    Works Cited: All videos are credited to their original creators and hosted with permission.<br />
+    <div class="works-cited">
+      Works Cited: All videos are credited to their original creators and hosted with permission.
+    </div>
     © 2025 Walk By Faith. All Rights Reserved.
   </footer>
 
