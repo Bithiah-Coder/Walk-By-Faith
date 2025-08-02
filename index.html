@@ -9,243 +9,190 @@
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
+      background-color: #f9f6f0;
+      color: black;
     }
 
     header {
-      background-color: #000;
-      color: white;
-      padding: 10px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 20px;
+      background-color: black;
+      padding: 10px 0;
+      text-align: center;
     }
 
     nav a {
-      background-color: #d9c8f3;
-      color: black;
+      color: white;
+      margin: 0 20px;
       text-decoration: none;
-      margin-left: 10px;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-weight: bold;
+      font-size: 1.2rem;
     }
 
     nav a:hover {
-      background-color: #c4a9f0;
+      text-decoration: underline;
     }
 
     .hero {
-      background: url('images/church-intro.jpg') center/cover no-repeat;
-      height: 60vh;
-      color: white;
+      background-image: url('your-image-url.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 70vh;
       display: flex;
-      justify-content: center;
       align-items: center;
-      position: relative;
-      text-align: center;
-    }
-
-    .hero button {
-      background-color: #a485d8;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      position: absolute;
-      bottom: 30px;
-    }
-
-    .white-section, .black-section, .gray-section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .black-section {
-      background-color: black;
-      color: white;
-    }
-
-    .white-section {
-      background-color: white;
-    }
-
-    .gray-section {
-      background-color: #f0f0f0;
-    }
-
-    .religion-section {
-      display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-
-    .religion {
-      background-color: white;
-      width: 250px;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
       position: relative;
     }
 
-    .religion:hover {
-      transform: translateY(-5px);
-    }
-
-    .religion:hover .extra-info {
-      display: block;
-    }
-
-    .religion:hover .see-more {
-      display: none;
-    }
-
-    .religion h3 {
-      font-weight: bold;
-    }
-
-    .religion img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .see-more {
-      background-color: #a485d8;
+    .hero-button {
+      background-color: #5f4b8b;
       color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      padding: 10px 20px;
       border: none;
-      padding: 10px 15px;
-      margin-top: 10px;
-      border-radius: 5px;
+      border-radius: 10px;
       cursor: pointer;
     }
 
-    .extra-info {
+    .section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 12px;
+      width: 250px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .popup-info {
       display: none;
-      font-size: 14px;
+      font-size: 0.9rem;
+      color: #555;
       margin-top: 10px;
-      text-align: left;
+    }
+
+    .card:hover .popup-info {
+      display: block;
     }
 
     footer {
       background-color: black;
       color: white;
-      padding: 20px;
-      font-size: 14px;
       text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
     }
 
-    .works-cited {
-      font-size: 13px;
-      text-align: left;
+    @media (max-width: 600px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .hero-button {
+        font-size: 1rem;
+        padding: 8px 16px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Walk By Faith</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="support.html">Support</a>
-    <a href="prayer.html">Prayer Request</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <!-- NAVIGATION BAR -->
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="prayerrequest.html">Prayer Request</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<section class="hero" id="home">
-  <button onclick="document.getElementById('game').scrollIntoView({ behavior: 'smooth' });">Start Your Faith Journey</button>
-</section>
-
-<section class="white-section">
-  <h2>Welcome to Walk By Faith</h2>
-  <p>This is a Christ-centered space created to guide you gently into faith while exploring the world with grace and truth. Learn about Jesus, explore other religions, and feel encouraged on your walk.</p>
-</section>
-
-<section class="black-section" id="game">
-  <h2>Interactive Story: Coming Soon</h2>
-  <p>Step into the shoes of Mary, Jesus, and the disciples. Experience healing, miracles, and truth through an immersive walk with Christ.</p>
-</section>
-
-<section class="gray-section">
-  <h2>Learn More About Other Religions</h2>
-  <div class="religion-section">
-    
-    <div class="religion">
-      <h3>Christianity</h3>
-      <img src="images/christianity.jpg" alt="Christianity">
-      <p>Centered on Jesus Christ. A message of love, forgiveness, and eternal life.</p>
-      <button class="see-more" onclick="toggleText(this)">See More</button>
-      <div class="extra-info">
-        Christianity teaches that Jesus is the Son of God and Savior of the world. Followers believe in the death and resurrection of Jesus, and through Him, eternal life. Christianity values faith, grace, humility, and service. It is rooted in the Bible and the teachings of Jesus. (<em>Source: EveryStudent.com</em>)
-      </div>
-    </div>
-
-    <div class="religion">
-      <h3>Islam</h3>
-      <img src="images/islam.jpg" alt="Islam">
-      <p>Based on submission to God through the teachings of the Prophet Muhammad.</p>
-      <button class="see-more" onclick="toggleText(this)">See More</button>
-      <div class="extra-info">
-        Islam teaches that there is one God (Allah), and Muhammad is His prophet. The Quran guides life, prayer, charity, and fasting. Muslims seek closeness to God through obedience and spiritual reflection. (<em>Source: EveryStudent.com</em>)
-      </div>
-    </div>
-
-    <div class="religion">
-      <h3>Hinduism</h3>
-      <img src="images/hindu.jpg" alt="Hinduism">
-      <p>A diverse set of beliefs involving karma, dharma, and spiritual growth.</p>
-      <button class="see-more" onclick="toggleText(this)">See More</button>
-      <div class="extra-info">
-        Hinduism is based on sacred texts and emphasizes self-realization, karma, and devotion. It includes worship of many deities but teaches all reality is one (Brahman). It promotes spiritual balance and harmony. (<em>Source: EveryStudent.com</em>)
-      </div>
-    </div>
-
-    <div class="religion">
-      <h3>Buddhism</h3>
-      <img src="images/buddhism.jpg" alt="Buddhism">
-      <p>Focused on enlightenment and peace through mindfulness and compassion.</p>
-      <button class="see-more" onclick="toggleText(this)">See More</button>
-      <div class="extra-info">
-        Founded by Siddhartha Gautama, Buddhism teaches the path to enlightenment through the Four Noble Truths and Eightfold Path. It values non-violence, meditation, and compassion. (<em>Source: EveryStudent.com</em>)
-      </div>
-    </div>
-
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <button class="hero-button" onclick="document.getElementById('interactive-story').scrollIntoView({ behavior: 'smooth' })">
+      Start Your Faith Journey
+    </button>
   </div>
-</section>
 
-<footer>
-  <div class="works-cited">
-    <strong>Works Cited:</strong><br>
-    Intro: aaron-burden-MYu49bghVAM<br>
-    Christianity: kevin-cai-0kVQh23Jspo<br>
-    Islam: abdullah-arfat-cg2LLJuS_wo<br>
-    Hindu: jared-rice-DDsD431IFX4<br>
-    Buddhism: jared-rice-DDsD431IFX4<br>
-    Religious summaries: <a href="https://www.everystudent.com/features/religions-of-the-world.html" target="_blank" style="color:#ccc;">EveryStudent – 5 Major Religions of the World</a>
+  <!-- INTRO SECTION -->
+  <div class="section">
+    <h2>Learn more about other religions here.</h2>
+    <div class="cards">
+      <!-- Christianity Card -->
+      <div class="card">
+        <h3>Christianity</h3>
+        <img src="your-christian-image.jpg" alt="Christianity" style="width:100%; border-radius: 10px;">
+        <p>Faith in Jesus Christ as Lord and Savior.</p>
+        <div class="popup-info">Jesus is the promised Messiah in the Bible, whose teachings and sacrifice form the cornerstone of salvation.</div>
+      </div>
+
+      <!-- Muslimanity Card -->
+      <div class="card">
+        <h3>Muslimanity</h3>
+        <img src="your-muslim-image.jpg" alt="Islam" style="width:100%; border-radius: 10px;">
+        <p>Submission to God through the teachings of the Prophet Muhammad.</p>
+        <div class="popup-info">Islam emphasizes devotion to Allah, daily prayer, and the teachings in the Quran.</div>
+      </div>
+
+      <!-- Hinduism Card -->
+      <div class="card">
+        <h3>Hinduism</h3>
+        <img src="your-hindu-image.jpg" alt="Hinduism" style="width:100%; border-radius: 10px;">
+        <p>A complex blend of philosophy, ritual, and spiritual paths.</p>
+        <div class="popup-info">Key beliefs include karma, dharma, reincarnation, and various deities representing aspects of Brahman.</div>
+      </div>
+
+      <!-- Buddhism Card -->
+      <div class="card">
+        <h3>Buddhism</h3>
+        <img src="your-buddhist-image.jpg" alt="Buddhism" style="width:100%; border-radius: 10px;">
+        <p>The path to enlightenment through meditation and moral living.</p>
+        <div class="popup-info">Founded by Siddhartha Gautama, Buddhism encourages mindfulness and detachment from worldly desires.</div>
+      </div>
+    </div>
   </div>
-  <p>&copy; 2025 Walk By Faith Church | Built by Bithiah Lloyd</p>
-</footer>
 
-<script>
-  function toggleText(button) {
-    const info = button.nextElementSibling;
-    if (info.style.display === "block") {
-      info.style.display = "none";
-      button.textContent = "See More";
-    } else {
-      info.style.display = "block";
-      button.textContent = "See Less";
-    }
-  }
-</script>
+  <!-- INTERACTIVE STORY PLACEHOLDER -->
+  <div class="section" id="interactive-story">
+    <h2>Experience the Story</h2>
+    <p>A small game starting with the birth of Jesus is coming soon...</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Works Cited:<br>
+      Images from Unsplash.com<br>
+      Religious summaries adapted from Britannica.com
+    </p>
+    <p>Bithiah Lloyd © 2025</p>
+  </footer>
 
 </body>
 </html>
