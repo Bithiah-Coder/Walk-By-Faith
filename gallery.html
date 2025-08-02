@@ -9,54 +9,57 @@
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #fdfaf6;
+      background-color: #f8f4f0;
       color: #000;
     }
 
-    /* NAVIGATION */
+    /* Nav bar */
     nav {
       background-color: #000;
-      padding: 20px 0;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 15px 0;
+      flex-wrap: wrap;
     }
 
     nav a {
-      color: #000;
-      background-color: #a98fc4;
+      background-color: #5e3b8c;
+      color: #fff;
       text-decoration: none;
-      margin: 0 15px;
       padding: 10px 20px;
-      border-radius: 20px;
-      font-size: 18px;
+      border-radius: 25px;
+      font-weight: bold;
       transition: background-color 0.3s, transform 0.3s;
-      display: inline-block;
     }
 
     nav a:hover {
-      background-color: #8e76ab;
+      background-color: #7a5dbf;
       transform: scale(1.05);
     }
 
     h1 {
       text-align: center;
-      margin-top: 30px;
+      padding: 40px 20px 10px;
       font-size: 2em;
+      font-weight: bold;
     }
 
-    .video-container {
+    .gallery-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px;
+      padding: 20px;
       gap: 30px;
     }
 
     .video-wrapper {
-      max-width: 700px;
-      width: 100%;
+      width: 90%;
+      max-width: 800px;
+      overflow: hidden;
       opacity: 0;
       transform: translateY(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transition: all 0.8s ease-out;
     }
 
     .video-wrapper.show {
@@ -66,33 +69,29 @@
 
     video {
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .works-cited {
+      text-align: center;
+      font-size: 0.9em;
+      color: #fff;
+      background-color: #000;
+      padding: 30px 20px;
+      margin-top: 50px;
     }
 
     footer {
       background-color: #000;
-      color: #fff;
-      text-align: left;
-      padding: 15px 30px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 10px auto;
-      }
-
-      .video-container {
-        padding: 20px 10px;
-      }
+      padding: 15px;
+      text-align: center;
+      color: white;
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
   <nav>
     <a href="index.html">Home</a>
     <a href="gallery.html">Gallery</a>
@@ -103,50 +102,37 @@
 
   <h1>Join our community now and walk by faith, not sight.</h1>
 
-  <!-- VIDEO GALLERY -->
-  <div class="video-container">
-    <div class="video-wrapper">
-      <video controls>
-        <source src="videos/FamilyPrayer.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="video-wrapper">
-      <video controls>
-        <source src="videos/HolyBible.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="video-wrapper">
-      <video controls>
-        <source src="videos/RomansChapter.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+  <div class="gallery-container">
+    <div class="video-wrapper"><video controls src="videos/FamilyPrayer.mp4"></video></div>
+    <div class="video-wrapper"><video controls src="videos/HolyBible.mp4"></video></div>
+    <div class="video-wrapper"><video controls src="videos/RomansChapter.mp4"></video></div>
   </div>
 
-  <!-- FOOTER -->
+  <div class="works-cited">
+    <p><strong>Works Cited:</strong></p>
+    <p>Video content © Walk By Faith Ministries. All rights reserved.</p>
+  </div>
+
   <footer>
-    <strong>Works Cited:</strong><br>
-    Videos provided by Walk By Faith Ministry. All rights reserved.<br>
-    Additional media used with permission or under fair use.
+    &copy; 2025 Walk By Faith. Designed with purpose.
   </footer>
 
-  <!-- SLIDE IN EFFECT -->
   <script>
     const videoWrappers = document.querySelectorAll('.video-wrapper');
 
-    const slideInOnScroll = () => {
+    function handleScroll() {
+      const triggerBottom = window.innerHeight * 0.9;
       videoWrappers.forEach(wrapper => {
-        const rect = wrapper.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
+        const wrapperTop = wrapper.getBoundingClientRect().top;
+        if (wrapperTop < triggerBottom) {
           wrapper.classList.add('show');
         }
       });
-    };
+    }
 
-    window.addEventListener('scroll', slideInOnScroll);
-    window.addEventListener('load', slideInOnScroll);
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', handleScroll);
   </script>
+
 </body>
 </html>
