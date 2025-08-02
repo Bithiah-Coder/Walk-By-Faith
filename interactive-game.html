@@ -2,189 +2,184 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Interactive Faith Game</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Game - Walk By Faith</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #f9f7fb;
-      color: #000;
+      background-color: #000;
+      color: #fff;
     }
-
     header {
       background-color: black;
-      color: white;
-      padding: 1rem;
+      padding: 10px;
       text-align: center;
     }
-
-    header nav a {
+    header h1 {
       color: white;
-      margin: 0 1rem;
+      margin: 0 0 10px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    header nav a {
+      background-color: #d6c8eb;
+      color: black;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-family: 'Playfair Display', serif;
+      display: inline-block;
+      transition: background-color 0.3s ease;
     }
-
-    section {
-      padding: 3rem 2rem;
+    header nav a:hover {
+      background-color: #b99de6;
+    }
+    .section {
+      padding: 40px 20px;
       text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
     }
-
-    .slide-in {
+    .story-image {
+      width: 100%;
+      max-width: 600px;
+      border: 6px solid #d6c8eb;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #d6c8eb;
+      margin: 30px auto;
       opacity: 0;
       transform: translateY(40px);
-      transition: all 1s ease-out;
+      transition: all 0.8s ease-in-out;
+      display: block;
     }
-
-    .slide-in.visible {
+    .story-image.visible {
       opacity: 1;
       transform: translateY(0);
-      box-shadow: 0 0 20px #d6c8eb;
-      border-radius: 20px;
     }
-
-    .image-block {
-      margin: 3rem auto;
-      max-width: 800px;
-    }
-
-    .image-block img {
-      width: 100%;
-      border-radius: 20px;
-    }
-
     .quiz {
-      background-color: #eee7f7;
-      padding: 2rem;
-      margin-top: 3rem;
-      border-radius: 20px;
-      box-shadow: 0 0 20px #d6c8eb;
+      margin-top: 50px;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #d6c8eb;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    .quiz h2 {
-      margin-bottom: 1rem;
-    }
-
     .quiz label {
       display: block;
-      margin: 0.5rem 0;
+      margin: 10px 0;
+      color: #fff;
+      font-size: 16px;
     }
-
-    .submit-btn {
-      margin-top: 1rem;
+    .quiz input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: none;
+      font-size: 16px;
+    }
+    .quiz button {
       background-color: #d6c8eb;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 10px 20px;
       font-weight: bold;
-      border-radius: 10px;
+      border-radius: 6px;
       cursor: pointer;
+      font-size: 16px;
     }
-
-    .result {
+    #result {
+      color: #d6c8eb;
       font-weight: bold;
-      margin-top: 1rem;
+      margin-top: 15px;
+      font-size: 18px;
+    }
+    /* Optional: interactive clickable words style */
+    .clickable {
+      color: #d6c8eb;
+      cursor: pointer;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Walk By Faith</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="interactive-game.html">Interactive Game</a>
+      <a href="testimony.html">Testimony</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="testimony.html">Testimony</a>
-    <a href="interactive-game.html">Game</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <div class="section">
+    <h2>The Birth of Jesus</h2>
 
-<section>
-  <h1>Journey Through the Birth of Jesus</h1>
-  <p>Scroll to discover the story... then test what you’ve learned.</p>
-</section>
+    <p>
+      The <span class="clickable" onclick="alert('The angel Gabriel appeared to Mary to bring her God’s message.')">angel</span> shone bright in the night sky,
+      guiding the way with a radiant star that promised hope and salvation.
+    </p>
+    <p>
+      Shepherds and wise men alike looked up in awe, knowing that something holy had come to the world.
+    </p>
+    <img src="images/angel-jesus-star.jpg" alt="Angel, Jesus, and Star" class="story-image" />
 
-<section class="image-block slide-in">
-  <h2>It began in a humble stable...</h2>
-  <img src="images/birthingofjesus.jpg" alt="The birth of Jesus">
-</section>
+    <p>
+      Mary and Joseph, faithful and humble, journeyed far to find a place for the newborn King.
+    </p>
+    <p>
+      Together they cared for baby Jesus, wrapped in swaddling clothes, the Son of God lying in a manger — the greatest gift of all.
+    </p>
+    <img src="images/mary-joseph-jesus.jpg" alt="Mary and Joseph with Jesus" class="story-image" />
+  </div>
 
-<section class="image-block slide-in">
-  <h2>Could it be... the Messiah?</h2>
-  <img src="images/coulditbethemessiah.jpg" alt="Could it be the Messiah">
-</section>
+  <div class="quiz">
+    <h3>Quiz Time</h3>
+    <form id="quizForm">
+      <label>1. Who gave birth to Jesus?
+        <input type="text" name="q1" required />
+      </label>
+      <label>2. What was the baby's name?
+        <input type="text" name="q2" required />
+      </label>
+      <label>3. What's another name for Jesus Christ?
+        <input type="text" name="q3" required />
+      </label>
+      <button type="submit">Submit Answers</button>
+      <p id="result"></p>
+    </form>
+  </div>
 
-<section class="image-block slide-in">
-  <h2>“Fear not,” the angel said...</h2>
-  <img src="images/fearnot.jpg" alt="Angel speaking">
-</section>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
 
-<section class="image-block slide-in">
-  <h2>Mary wraps Jesus in swaddling clothes.</h2>
-  <img src="images/marywrapsjesus.jpg" alt="Mary and Jesus">
-</section>
-
-<section class="quiz">
-  <h2>Test Your Knowledge</h2>
-  <form id="quizForm">
-    <label>
-      1. Who gave birth to Jesus?
-      <br>
-      <input type="text" name="q1" />
-    </label>
-    <label>
-      2. What was the baby's name?
-      <br>
-      <input type="text" name="q2" />
-    </label>
-    <label>
-      3. What is another name for Jesus Christ?
-      <br>
-      <input type="text" name="q3" />
-    </label>
-    <button type="submit" class="submit-btn">Submit</button>
-  </form>
-  <div class="result" id="result"></div>
-</section>
-
-<script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+    document.querySelectorAll('.story-image').forEach(img => {
+      observer.observe(img);
     });
-  });
 
-  document.querySelectorAll('.slide-in').forEach(el => {
-    observer.observe(el);
-  });
+    document.getElementById('quizForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const answers = Object.fromEntries(new FormData(event.target).entries());
+      let score = 0;
+      if (answers.q1.trim().toLowerCase() === 'mary') score++;
+      if (answers.q2.trim().toLowerCase() === 'jesus') score++;
+      if (["messiah", "the messiah", "christ"].includes(answers.q3.trim().toLowerCase())) score++;
 
-  document.getElementById("quizForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const answers = {
-      q1: "mary",
-      q2: "jesus",
-      q3: "messiah"
-    };
-
-    let correct = 0;
-    const formData = new FormData(this);
-    for (let [key, value] of formData.entries()) {
-      if (value.trim().toLowerCase() === answers[key]) {
-        correct++;
-      }
-    }
-
-    const resultText = document.getElementById("result");
-    if (correct === 3) {
-      resultText.innerText = "Great job! You passed!";
-    } else {
-      resultText.innerText = `You got ${correct}/3 correct. Try again!`;
-    }
-  });
-</script>
-
+      document.getElementById('result').textContent = `You got ${score}/3 correct.`;
+    });
+  </script>
 </body>
 </html>
