@@ -2,92 +2,143 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Walk By Faith | Interactive Journey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Game - Walk By Faith</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      background-color: #000000;
-      color: #fff;
       font-family: 'Playfair Display', serif;
+      background-color: black;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
+      padding: 4rem 2rem;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease-in-out;
     }
 
-    header {
-      width: 100%;
-      background-color: #000;
-      padding: 15px;
-      text-align: center;
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    header h1 {
-      color: #D6C8EB;
-      font-size: 2rem;
-      margin: 0;
+    .section img {
+      width: 80%;
+      max-width: 500px;
+      border-radius: 10px;
+      margin-top: 1rem;
     }
 
-    .scene-box {
-      background-color: #1c1c1c;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px #D6C8EB;
+    .quiz {
+      margin-top: 3rem;
+      padding: 2rem;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      width: 90%;
       max-width: 600px;
-      margin-top: 30px;
-      text-align: center;
     }
 
-    button {
+    .quiz h3 {
+      margin-bottom: 1rem;
+    }
+
+    .quiz label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+
+    .submit-btn {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
       background-color: #D6C8EB;
       color: black;
-      padding: 10px 25px;
       border: none;
-      border-radius: 8px;
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
       cursor: pointer;
-      margin-top: 20px;
-      transition: background-color 0.3s ease;
+      font-weight: bold;
+      border-radius: 5px;
     }
 
-    button:hover {
-      background-color: #c4b2e0;
+    .result {
+      margin-top: 1rem;
+      font-style: italic;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Walk By Faith</h1>
+  <header style="background-color: black; padding: 1rem; text-align: center;">
+    <h1 style="margin: 0; color: white; font-family: 'Playfair Display';">Walk By Faith</h1>
   </header>
 
-  <div class="scene-box" id="scene">
-    <p>You are in a quiet stable in Bethlehem. Mary has just given birth to a son. The air is calm but filled with awe.</p>
-    <button onclick="nextScene()">Continue</button>
+  <div class="section">
+    <p>It all began in Bethlehem, where Mary gave birth to a child destined to change the world.</p>
+    <img src="BirthingofJesus.jpg" alt="Mary giving birth to Jesus">
+  </div>
+
+  <div class="section">
+    <p>Could it be? The Messiah, foretold in prophecy, now born of a virgin.</p>
+    <img src="Could it be the Messiah?.jpg" alt="Could it be the Messiah?">
+  </div>
+
+  <div class="section">
+    <p>"Fear not," the angel declared. "For unto you is born this day in the city of David a Saviour, which is Christ the Lord."</p>
+    <img src="Fear Not.jpg" alt="Angel proclaiming the birth of Christ">
+  </div>
+
+  <div class="section">
+    <p>Mary lovingly wraps baby Jesus, treasuring the miracle in her arms.</p>
+    <img src="MaryWrapsJesus.jpg" alt="Mary wraps Jesus">
+  </div>
+
+  <div class="quiz">
+    <h3>Quick Quiz – Test Your Faith Journey Knowledge:</h3>
+    <form id="quizForm">
+      <label>1. Who gave birth to Jesus?
+        <input type="text" name="q1">
+      </label>
+      <label>2. What was the baby's name?
+        <input type="text" name="q2">
+      </label>
+      <label>3. What's another name for Jesus Christ?
+        <input type="text" name="q3">
+      </label>
+      <button type="submit" class="submit-btn">Submit Answers</button>
+      <div class="result" id="quizResult"></div>
+    </form>
   </div>
 
   <script>
-    const scenes = [
-      "She wraps the baby in swaddling clothes and lays Him in a manger. A star shines brightly overhead.",
-      "Shepherds nearby hear the voice of an angel saying, 'Fear not, for unto you is born this day a Saviour, which is Christ the Lord.'",
-      "The shepherds come in haste and kneel before the child. One whispers, 'Could this be the Messiah foretold?'",
-      "You feel a deep stirring, as if something greater has just entered the world. A journey has begun...",
-      "End of demo — to be continued in His teachings, His walk, and the cross He bore."
-    ];
+    const sections = document.querySelectorAll('.section');
+    window.addEventListener('scroll', () => {
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+    });
 
-    let currentScene = 0;
-
-    function nextScene() {
-      const sceneBox = document.getElementById('scene');
-      if (currentScene < scenes.length) {
-        sceneBox.innerHTML = `<p>${scenes[currentScene]}</p><button onclick="nextScene()">Continue</button>`;
-        currentScene++;
-      } else {
-        sceneBox.innerHTML = `<p>Thank you for walking this journey. Return to the homepage to learn more.</p>`;
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const answers = {
+        q1: 'mary',
+        q2: 'jesus',
+        q3: 'messiah'
+      };
+      const formData = new FormData(this);
+      let correct = 0;
+      for (let [key, value] of formData.entries()) {
+        if (value.trim().toLowerCase() === answers[key]) correct++;
       }
-    }
+      const total = Object.keys(answers).length;
+      document.getElementById('quizResult').innerText = `You got ${correct} out of ${total} correct.`;
+    });
   </script>
 </body>
 </html>
