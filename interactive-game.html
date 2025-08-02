@@ -2,143 +2,198 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Interactive Game - Walk By Faith</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: black;
-      color: white;
-      overflow-x: hidden;
+      background-color: #f6f5fa;
+      color: #000;
     }
 
-    .section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 4rem 2rem;
+    header {
+      background-color: black;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      margin: 0 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .scene {
+      margin: 3rem 0;
       opacity: 0;
       transform: translateY(50px);
-      transition: all 1s ease-in-out;
+      transition: all 0.8s ease-out;
+      border-radius: 15px;
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0 0 15px rgba(200, 160, 255, 0.3);
     }
 
-    .section.visible {
+    .scene.visible {
       opacity: 1;
       transform: translateY(0);
+      box-shadow: 0 0 25px rgba(200, 160, 255, 0.7);
     }
 
-    .section img {
-      width: 80%;
-      max-width: 500px;
+    .scene img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
       border-radius: 10px;
+      border: 5px solid rgba(200, 160, 255, 0.6);
+    }
+
+    .scene p {
       margin-top: 1rem;
+      font-size: 1.2rem;
     }
 
     .quiz {
-      margin-top: 3rem;
+      background-color: #eee;
       padding: 2rem;
-      background-color: #1a1a1a;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(200, 160, 255, 0.5);
+      margin-top: 4rem;
     }
 
-    .quiz h3 {
-      margin-bottom: 1rem;
+    .quiz h2 {
+      text-align: center;
     }
 
     .quiz label {
       display: block;
-      margin: 0.5rem 0;
+      margin: 1rem 0 0.5rem;
     }
 
-    .submit-btn {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #D6C8EB;
-      color: black;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
+    .quiz input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      border: 2px solid #ccc;
       border-radius: 5px;
     }
 
-    .result {
+    .quiz button {
       margin-top: 1rem;
-      font-style: italic;
+      padding: 0.7rem 2rem;
+      background-color: #c0a4f7;
+      border: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: black;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
-  <header style="background-color: black; padding: 1rem; text-align: center;">
-    <h1 style="margin: 0; color: white; font-family: 'Playfair Display';">Walk By Faith</h1>
+
+  <header>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
   </header>
 
-  <div class="section">
-    <p>It all began in Bethlehem, where Mary gave birth to a child destined to change the world.</p>
-    <img src="BirthingofJesus.jpg" alt="Mary giving birth to Jesus">
+  <div class="container">
+    <div class="scene">
+      <img src="images/BirthingofJesus.jpg" alt="Mary giving birth to Jesus">
+      <p>In a quiet, humble place, a miracle took place. Mary gave birth to a son—His name was Jesus. The world didn’t notice, but heaven rejoiced.</p>
+    </div>
+
+    <div class="scene">
+      <img src="images/CouldItBeTheMessiah.jpg" alt="Could it be the Messiah?">
+      <p>Many wondered: could this truly be the promised Messiah? Prophets had spoken of His coming. Now, here He was—swaddled in cloth, resting in a manger.</p>
+    </div>
+
+    <div class="scene">
+      <img src="images/FearNot.jpg" alt="Angel comforting Mary and Joseph">
+      <p>Fear not, the angel said. This child was sent from God, to save His people. Mary and Joseph didn’t have all the answers, but they believed.</p>
+    </div>
+
+    <div class="scene">
+      <img src="images/MaryWrapsJesus.jpg" alt="Mary wrapping Jesus in cloth">
+      <p>Mary wrapped Him gently, her heart full of awe. She knew this wasn’t just her child—this was the Son of God. Emmanuel. God with us.</p>
+    </div>
+
+    <div class="quiz">
+      <h2>Quick Quiz</h2>
+      <form id="quizForm">
+        <label>1. Who gave birth to Jesus?</label>
+        <input type="text" name="q1" required />
+
+        <label>2. What was the baby's name?</label>
+        <input type="text" name="q2" required />
+
+        <label>3. What's another name for Jesus Christ?</label>
+        <input type="text" name="q3" required />
+
+        <button type="submit">Submit Answers</button>
+      </form>
+      <div id="quizResult" style="margin-top:1rem;font-weight:bold;"></div>
+    </div>
   </div>
 
-  <div class="section">
-    <p>Could it be? The Messiah, foretold in prophecy, now born of a virgin.</p>
-    <img src="Could it be the Messiah?.jpg" alt="Could it be the Messiah?">
-  </div>
-
-  <div class="section">
-    <p>"Fear not," the angel declared. "For unto you is born this day in the city of David a Saviour, which is Christ the Lord."</p>
-    <img src="Fear Not.jpg" alt="Angel proclaiming the birth of Christ">
-  </div>
-
-  <div class="section">
-    <p>Mary lovingly wraps baby Jesus, treasuring the miracle in her arms.</p>
-    <img src="MaryWrapsJesus.jpg" alt="Mary wraps Jesus">
-  </div>
-
-  <div class="quiz">
-    <h3>Quick Quiz – Test Your Faith Journey Knowledge:</h3>
-    <form id="quizForm">
-      <label>1. Who gave birth to Jesus?
-        <input type="text" name="q1">
-      </label>
-      <label>2. What was the baby's name?
-        <input type="text" name="q2">
-      </label>
-      <label>3. What's another name for Jesus Christ?
-        <input type="text" name="q3">
-      </label>
-      <button type="submit" class="submit-btn">Submit Answers</button>
-      <div class="result" id="quizResult"></div>
-    </form>
-  </div>
+  <footer>
+    <p>© 2025 Walk By Faith | Images © Unsplash & Storytelling by Bithiah Lloyd</p>
+  </footer>
 
   <script>
-    const sections = document.querySelectorAll('.section');
+    // Slide-in effect on scroll
+    const scenes = document.querySelectorAll('.scene');
     window.addEventListener('scroll', () => {
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
+      scenes.forEach(scene => {
+        const rect = scene.getBoundingClientRect();
         if (rect.top < window.innerHeight - 100) {
-          section.classList.add('visible');
+          scene.classList.add('visible');
         }
       });
     });
 
-    document.getElementById('quizForm').addEventListener('submit', function(e) {
+    // Quiz logic
+    document.getElementById("quizForm").addEventListener("submit", function(e) {
       e.preventDefault();
       const answers = {
-        q1: 'mary',
-        q2: 'jesus',
-        q3: 'messiah'
+        q1: "mary",
+        q2: "jesus",
+        q3: "emmanuel"
       };
+
+      let score = 0;
       const formData = new FormData(this);
-      let correct = 0;
       for (let [key, value] of formData.entries()) {
-        if (value.trim().toLowerCase() === answers[key]) correct++;
+        if (value.trim().toLowerCase() === answers[key]) {
+          score++;
+        }
       }
-      const total = Object.keys(answers).length;
-      document.getElementById('quizResult').innerText = `You got ${correct} out of ${total} correct.`;
+
+      const result = document.getElementById("quizResult");
+      if (score === 3) {
+        result.textContent = "🌟 Perfect! You’re walking by faith!";
+      } else {
+        result.textContent = `You got ${score}/3. Keep learning and growing in faith!`;
+      }
     });
   </script>
+
 </body>
 </html>
