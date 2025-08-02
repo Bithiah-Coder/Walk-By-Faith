@@ -61,8 +61,7 @@
       bottom: 30px;
     }
 
-    .white-section {
-      background-color: white;
+    .white-section, .black-section, .gray-section {
       padding: 40px 20px;
       text-align: center;
     }
@@ -70,14 +69,14 @@
     .black-section {
       background-color: black;
       color: white;
-      padding: 40px 20px;
-      text-align: center;
+    }
+
+    .white-section {
+      background-color: white;
     }
 
     .gray-section {
       background-color: #f0f0f0;
-      padding: 40px 20px;
-      text-align: center;
     }
 
     .religion-section {
@@ -93,7 +92,12 @@
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.5s;
+      transition: transform 0.3s;
+      position: relative;
+    }
+
+    .religion:hover {
+      transform: translateY(-5px);
     }
 
     .religion h3 {
@@ -115,43 +119,11 @@
       cursor: pointer;
     }
 
-    .emotion-buttons button {
-      margin: 6px;
-      padding: 10px 16px;
-      font-size: 15px;
-      background-color: #a485d8;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .emotion-buttons button:hover {
-      background-color: #7f64b6;
-    }
-
-    .prayer-form {
-      margin: 20px auto;
-      max-width: 500px;
-    }
-
-    .prayer-form input,
-    .prayer-form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .prayer-form button {
-      background-color: #a485d8;
-      color: white;
-      padding: 10px 18px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    .extra-info {
+      display: none;
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: left;
     }
 
     footer {
@@ -197,54 +169,48 @@
 <section class="gray-section">
   <h2>Learn More About Other Religions</h2>
   <div class="religion-section">
+    
     <div class="religion">
       <h3>Christianity</h3>
       <img src="images/christianity.jpg" alt="Christianity">
       <p>Centered on Jesus Christ. A message of love, forgiveness, and eternal life.</p>
-      <button class="see-more">See More</button>
+      <button class="see-more" onclick="toggleText(this)">See More</button>
+      <div class="extra-info">
+        Christianity teaches that Jesus Christ is the Son of God and Savior of humanity. It emphasizes faith, grace, and salvation through Jesus’ death and resurrection. The Bible is its holy scripture, with the New Testament centered on Jesus’ life and teachings. Christians believe in one God who exists as the Trinity: Father, Son, and Holy Spirit. Worship typically involves prayer, scripture reading, and singing. There are many denominations, including Protestant, Catholic, and Orthodox. The faith promotes values such as love, humility, charity, and forgiveness. Followers aim to live in a Christlike way and anticipate eternal life with God.
+      </div>
     </div>
+
     <div class="religion">
       <h3>Islam</h3>
       <img src="images/islam.jpg" alt="Islam">
       <p>Based on submission to God through the teachings of the Prophet Muhammad.</p>
-      <button class="see-more">See More</button>
+      <button class="see-more" onclick="toggleText(this)">See More</button>
+      <div class="extra-info">
+        Islam is a monotheistic religion founded on the revelations given to the Prophet Muhammad. Muslims believe in one God, Allah, and follow the Quran as their holy text. The Five Pillars of Islam—faith, prayer, charity, fasting, and pilgrimage—form the foundation of Islamic life. Daily prayers are a vital practice, performed facing Mecca. Charity and kindness to others are highly emphasized. Ramadan, a month of fasting, is a time of reflection and devotion. The religion promotes justice, humility, and respect. Islam has a rich cultural and historical legacy across the world.
+      </div>
     </div>
+
     <div class="religion">
       <h3>Hinduism</h3>
       <img src="images/hindu.jpg" alt="Hinduism">
       <p>A diverse set of beliefs involving karma, dharma, and spiritual growth.</p>
-      <button class="see-more">See More</button>
+      <button class="see-more" onclick="toggleText(this)">See More</button>
+      <div class="extra-info">
+        Hinduism is one of the world’s oldest religions, rooted in the Indian subcontinent. It encompasses a wide variety of beliefs, rituals, and philosophies. Central ideas include karma (cause and effect), dharma (righteous duty), and moksha (liberation). Many Hindus worship multiple deities, with Brahman being the ultimate reality. Sacred texts include the Vedas, Upanishads, and Bhagavad Gita. Spiritual practices include yoga, meditation, and temple worship. Festivals such as Diwali and Holi celebrate divine stories and virtues. Hinduism emphasizes balance, harmony, and respect for all life.
+      </div>
     </div>
+
     <div class="religion">
       <h3>Buddhism</h3>
       <img src="images/buddhism.jpg" alt="Buddhism">
       <p>Focused on enlightenment and peace through mindfulness and compassion.</p>
-      <button class="see-more">See More</button>
+      <button class="see-more" onclick="toggleText(this)">See More</button>
+      <div class="extra-info">
+        Buddhism was founded by Siddhartha Gautama, known as the Buddha, over 2,500 years ago. It teaches the Four Noble Truths, which outline the nature of suffering and the path to liberation. The Eightfold Path guides followers in ethical living, mindfulness, and wisdom. Buddhists seek to reach enlightenment, or Nirvana, by overcoming desire and attachment. Meditation is a core practice. Compassion, non-violence, and self-awareness are central values. There are different schools of Buddhism, including Theravāda, Mahāyāna, and Vajrayāna. The religion has spread throughout Asia and the world as a philosophy of peace and self-realization.
+      </div>
     </div>
-  </div>
-</section>
 
-<section class="white-section" id="support">
-  <h2>What Are You Feeling?</h2>
-  <p>Select an emotion or struggle, and we'll share Scriptures and love to support you.</p>
-  <div class="emotion-buttons">
-    <button>Anger</button>
-    <button>Sadness</button>
-    <button>Anxiety</button>
-    <button>Lust</button>
-    <button>Loneliness</button>
-    <button>Fear</button>
-    <button>Doubt</button>
   </div>
-</section>
-
-<section class="gray-section" id="prayer">
-  <h2>Submit a Prayer Request</h2>
-  <form class="prayer-form" onsubmit="event.preventDefault(); alert('Jesus cries with you and your help is on the way.'); this.reset();">
-    <input type="text" placeholder="Your Name" required>
-    <textarea rows="5" placeholder="Your Prayer..." required></textarea>
-    <button type="submit">Send Prayer</button>
-  </form>
 </section>
 
 <footer>
@@ -258,6 +224,19 @@
   </div>
   <p>&copy; 2025 Walk By Faith Church | Built by Bithiah Lloyd</p>
 </footer>
+
+<script>
+  function toggleText(button) {
+    const info = button.nextElementSibling;
+    if (info.style.display === "block") {
+      info.style.display = "none";
+      button.textContent = "See More";
+    } else {
+      info.style.display = "block";
+      button.textContent = "See Less";
+    }
+  }
+</script>
 
 </body>
 </html>
