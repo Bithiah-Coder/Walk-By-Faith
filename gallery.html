@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Walk By Faith - Gallery</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -13,14 +13,24 @@
       color: black;
     }
 
-    /* NAVIGATION STYLES MATCHING HOME PAGE */
+    header {
+      background-color: #000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
     nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      padding: 1em 0; /* add some vertical spacing */
-      background-color: transparent; /* home page nav background is transparent inside header */
+      padding-bottom: 10px;
     }
 
     nav a {
@@ -38,13 +48,6 @@
 
     nav a:hover {
       background-color: #c4a9f0;
-    }
-
-    /* Keep footer, header, video container styles unchanged */
-    header {
-      text-align: center;
-      padding: 2em 1em 1em 1em;
-      font-size: 1.5em;
     }
 
     .video-container {
@@ -66,12 +69,11 @@
       transform: translateY(0);
     }
 
-    iframe {
+    video {
       width: 80%;
       max-width: 800px;
-      height: 450px;
-      border: none;
       border-radius: 8px;
+      outline: none;
     }
 
     footer {
@@ -92,32 +94,40 @@
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="interactive.html">Interactive Game</a>
-    <a href="testimony.html">Testimony</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
   <header>
-    Join our community now and walk by faith, not sight.
+    <h1>Walk By Faith</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="interactive-game.html">Interactive Game</a>
+      <a href="testimony.html">Testimony</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <div class="video-container">
+  <section class="video-container">
     <div class="video-wrapper">
-      <iframe src="videos/video1.mp4" allowfullscreen></iframe>
+      <video controls preload="metadata">
+        <source src="videos/FamilyPrayer.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
     <div class="video-wrapper">
-      <iframe src="videos/video2.mp4" allowfullscreen></iframe>
+      <video controls preload="metadata">
+        <source src="videos/HolyBible.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
     <div class="video-wrapper">
-      <iframe src="videos/video3.mp4" allowfullscreen></iframe>
+      <video controls preload="metadata">
+        <source src="videos/RomansChapter.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
-  </div>
+  </section>
 
   <footer>
-    Works Cited: All videos are credited to their original creators and hosted with permission.<br>
+    Works Cited: All videos are credited to their original creators and hosted with permission.<br />
     © 2025 Walk By Faith. All Rights Reserved.
   </footer>
 
