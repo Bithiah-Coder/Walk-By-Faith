@@ -87,6 +87,7 @@
       gap: 30px;
     }
 
+    /* Slide-in start state */
     .religion {
       background-color: white;
       width: 250px;
@@ -95,6 +96,16 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
       position: relative;
+
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    /* Slide-in visible */
+    .religion.visible {
+      opacity: 1;
+      transform: translateX(0);
     }
 
     .religion h3 {
@@ -174,7 +185,7 @@
   <h1>Walk By Faith</h1>
   <nav>
     <a href="#home">Home</a>
-    <a href="#contact">Contact</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
@@ -269,6 +280,24 @@
     alert('Jesus cries with you and your help is on the way.');
     event.target.reset();
   }
+
+  // Slide-in animation for religion cards on scroll
+  const religionCards = document.querySelectorAll('.religion');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // animate once only
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  religionCards.forEach(card => {
+    observer.observe(card);
+  });
 </script>
 
 </body>
