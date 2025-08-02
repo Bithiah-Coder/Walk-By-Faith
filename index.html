@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Walk By Faith</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #f9f6f0;
-      color: black;
+      background-color: #f9f5f0;
+      color: #333;
     }
 
     header {
-      background-color: black;
+      background-color: #d9c2e5;
       padding: 10px 0;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
     }
 
-    nav a {
-      color: white;
-      margin: 0 20px;
+    header a {
       text-decoration: none;
-      font-size: 1.2rem;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
+      color: #000;
+      font-weight: bold;
     }
 
     .hero {
-      background-image: url('your-image-url.jpg');
+      background-image: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1950&q=80');
       background-size: cover;
       background-position: center;
       height: 70vh;
@@ -41,158 +39,97 @@
       position: relative;
     }
 
-    .hero-button {
-      background-color: #5f4b8b;
+    .hero button {
+      background-color: #7c4dff;
       color: white;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      padding: 10px 20px;
       border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-family: 'Playfair Display', serif;
       border-radius: 10px;
       cursor: pointer;
     }
 
-    .section {
-      padding: 40px;
+    h2 {
       text-align: center;
+      margin: 30px 0 10px;
     }
 
-    .cards {
+    .card-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
-      margin-top: 20px;
+      gap: 20px;
+      padding: 20px;
     }
 
     .card {
       background-color: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 20px;
-      border-radius: 12px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
       width: 250px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
       position: relative;
     }
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    }
-
-    .card h3 {
-      margin-top: 0;
+    .card img {
+      width: 100%;
+      border-radius: 10px;
     }
 
     .popup-info {
-      display: none;
-      font-size: 0.9rem;
+      font-size: 14px;
+      margin-top: 8px;
       color: #555;
-      margin-top: 10px;
-    }
-
-    .card:hover .popup-info {
-      display: block;
-    }
-
-    footer {
-      background-color: black;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav a {
-        display: block;
-        margin: 10px 0;
-      }
-
-      .hero-button {
-        font-size: 1rem;
-        padding: 8px 16px;
-      }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- NAVIGATION BAR -->
   <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="support.html">Support</a>
-      <a href="prayerrequest.html">Prayer Request</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <a href="#">Home</a>
+    <a href="#">Support</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+    <a href="#">Blog</a>
   </header>
 
-  <!-- HERO SECTION -->
   <div class="hero">
-    <button class="hero-button" onclick="document.getElementById('interactive-story').scrollIntoView({ behavior: 'smooth' })">
-      Start Your Faith Journey
-    </button>
+    <button onclick="document.getElementById('religions').scrollIntoView({ behavior: 'smooth' });">Start Your Faith Journey</button>
   </div>
 
-  <!-- INTRO SECTION -->
-  <div class="section">
-    <h2>Learn more about other religions here.</h2>
-    <div class="cards">
-      <!-- Christianity Card -->
-      <div class="card">
-        <h3>Christianity</h3>
-        <img src="your-christian-image.jpg" alt="Christianity" style="width:100%; border-radius: 10px;">
-        <p>Faith in Jesus Christ as Lord and Savior.</p>
-        <div class="popup-info">Jesus is the promised Messiah in the Bible, whose teachings and sacrifice form the cornerstone of salvation.</div>
-      </div>
+  <h2>Learn more about other religions here.</h2>
+  <div class="card-container" id="religions">
+    <div class="card">
+      <h3>Christianity</h3>
+      <img src="https://images.unsplash.com/photo-1523351731850-9f949b7f2732?auto=format&fit=crop&w=600&q=80" alt="Christianity">
+      <p>Faith in Jesus Christ as Lord and Savior.</p>
+      <div class="popup-info">Jesus is the promised Messiah in the Bible, whose teachings and sacrifice form the cornerstone of salvation.</div>
+    </div>
 
-      <!-- Muslimanity Card -->
-      <div class="card">
-        <h3>Muslimanity</h3>
-        <img src="your-muslim-image.jpg" alt="Islam" style="width:100%; border-radius: 10px;">
-        <p>Submission to God through the teachings of the Prophet Muhammad.</p>
-        <div class="popup-info">Islam emphasizes devotion to Allah, daily prayer, and the teachings in the Quran.</div>
-      </div>
+    <div class="card">
+      <h3>Muslimanity</h3>
+      <img src="https://images.unsplash.com/photo-1601412436009-bb7fbd76bb12?auto=format&fit=crop&w=600&q=80" alt="Islam">
+      <p>Submission to God through the teachings of the Prophet Muhammad.</p>
+      <div class="popup-info">Islam emphasizes devotion to Allah, daily prayer, and the teachings in the Quran.</div>
+    </div>
 
-      <!-- Hinduism Card -->
-      <div class="card">
-        <h3>Hinduism</h3>
-        <img src="your-hindu-image.jpg" alt="Hinduism" style="width:100%; border-radius: 10px;">
-        <p>A complex blend of philosophy, ritual, and spiritual paths.</p>
-        <div class="popup-info">Key beliefs include karma, dharma, reincarnation, and various deities representing aspects of Brahman.</div>
-      </div>
+    <div class="card">
+      <h3>Hinduism</h3>
+      <img src="https://images.unsplash.com/photo-1583241982887-5c8cf3f877e7?auto=format&fit=crop&w=600&q=80" alt="Hinduism">
+      <p>A complex blend of philosophy, ritual, and spiritual paths.</p>
+      <div class="popup-info">Key beliefs include karma, dharma, reincarnation, and various deities representing aspects of Brahman.</div>
+    </div>
 
-      <!-- Buddhism Card -->
-      <div class="card">
-        <h3>Buddhism</h3>
-        <img src="your-buddhist-image.jpg" alt="Buddhism" style="width:100%; border-radius: 10px;">
-        <p>The path to enlightenment through meditation and moral living.</p>
-        <div class="popup-info">Founded by Siddhartha Gautama, Buddhism encourages mindfulness and detachment from worldly desires.</div>
-      </div>
+    <div class="card">
+      <h3>Buddhism</h3>
+      <img src="https://images.unsplash.com/photo-1547149600-2503e58c5f3b?auto=format&fit=crop&w=600&q=80" alt="Buddhism">
+      <p>The path to enlightenment through meditation and moral living.</p>
+      <div class="popup-info">Founded by Siddhartha Gautama, Buddhism encourages mindfulness and detachment from worldly desires.</div>
     </div>
   </div>
 
-  <!-- INTERACTIVE STORY PLACEHOLDER -->
-  <div class="section" id="interactive-story">
-    <h2>Experience the Story</h2>
-    <p>A small game starting with the birth of Jesus is coming soon...</p>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>Works Cited:<br>
-      Images from Unsplash.com<br>
-      Religious summaries adapted from Britannica.com
-    </p>
-    <p>Bithiah Lloyd © 2025</p>
-  </footer>
-
 </body>
+
 </html>
