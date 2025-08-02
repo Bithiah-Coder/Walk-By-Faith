@@ -12,32 +12,39 @@
       background-color: #000;
       color: #fff;
     }
+    /* HEADER STYLES */
     header {
       background-color: black;
-      padding: 10px;
+      color: white;
+      padding: 20px;
       text-align: center;
     }
     header h1 {
-      color: white;
-      margin: 0 0 10px;
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 10px;
     }
-    header nav a {
-      background-color: #d6c8eb;
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    nav a {
+      background-color: #d9c8f3;
       color: black;
-      margin: 0 15px;
       text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
       font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-family: 'Playfair Display', serif;
-      display: inline-block;
       transition: background-color 0.3s ease;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      line-height: 1.2;
     }
-    header nav a:hover {
-      background-color: #b99de6;
+    nav a:hover {
+      background-color: #c4a9f0;
     }
+
     .section {
       padding: 40px 20px;
       text-align: center;
@@ -92,6 +99,10 @@
       border-radius: 6px;
       cursor: pointer;
       font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    .quiz button:hover {
+      background-color: #b99de6;
     }
     #result {
       color: #d6c8eb;
@@ -99,11 +110,12 @@
       margin-top: 15px;
       font-size: 18px;
     }
-    /* Optional: interactive clickable words style */
+    /* Interactive clickable words style */
     .clickable {
       color: #d6c8eb;
       cursor: pointer;
       text-decoration: underline;
+      user-select: none;
     }
   </style>
 </head>
