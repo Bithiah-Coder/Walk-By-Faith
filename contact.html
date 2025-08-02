@@ -9,21 +9,23 @@
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #f0f0f0;
+      background: linear-gradient(to right, #f2f0f7, #e5dbf4);
       color: #333;
+      transition: background 0.5s ease;
     }
 
     header {
       background-color: #000;
       color: white;
-      padding: 10px 30px;
+      padding: 12px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     header h1 {
-      font-size: 20px;
+      font-size: 22px;
+      margin: 0;
     }
 
     nav a {
@@ -31,9 +33,10 @@
       color: black;
       text-decoration: none;
       margin-left: 10px;
-      padding: 8px 14px;
-      border-radius: 6px;
+      padding: 8px 16px;
+      border-radius: 8px;
       font-weight: bold;
+      transition: background-color 0.3s;
     }
 
     nav a:hover {
@@ -42,36 +45,45 @@
 
     main {
       max-width: 600px;
-      margin: 40px auto;
+      margin: 60px auto;
       background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     main h2 {
       margin-bottom: 20px;
       font-weight: bold;
+      font-size: 26px;
     }
 
     main p {
       font-size: 18px;
       margin-bottom: 30px;
+      color: #444;
     }
 
-    main a.email-link {
+    .email-link {
       display: inline-block;
       font-size: 18px;
       color: #a485d8;
       text-decoration: none;
       border: 2px solid #a485d8;
-      padding: 10px 20px;
-      border-radius: 6px;
-      transition: background-color 0.3s, color 0.3s;
+      padding: 12px 24px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
 
-    main a.email-link:hover {
+    .email-link:hover {
       background-color: #a485d8;
       color: white;
     }
@@ -82,7 +94,7 @@
       padding: 20px;
       font-size: 14px;
       text-align: center;
-      margin-top: 50px;
+      margin-top: 60px;
     }
   </style>
 </head>
@@ -98,8 +110,8 @@
 
 <main>
   <h2>Contact Walk By Faith</h2>
-  <p>If you have questions, prayer requests, or just want to reach out, I’d love to hear from you. Feel free to email me anytime.</p>
-  <a href="mailto:lloydbithiah77@gmail.com" class="email-link">lloydbithiah77@gmail.com</a>
+  <p>If you have questions, prayer requests, or just want to reach out, I’d love to hear from you. I answer personally and in love — don’t hesitate.</p>
+  <a href="mailto:lloydbithiah77@gmail.com" class="email-link" title="Click to email or right-click to copy">lloydbithiah77@gmail.com</a>
 </main>
 
 <footer>
